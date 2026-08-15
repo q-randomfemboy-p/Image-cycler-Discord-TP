@@ -9,20 +9,25 @@
 @import url("https://clearvision.github.io/ClearVision-v7/betterdiscord.css");
 
 :root {
+  /* ACCENT */
   --main-color: #e38a78;
   --hover-color: #e38a78;
   --success-color: #b5b5b5;
   --danger-color: #e38a78;
 
+  /* STATUS */
   --online-color: #d0d0d0;
   --idle-color: #a0a0a0;
   --dnd-color: #e38a78;
   --streaming-color: #b0b0b0;
   --offline-color: #555555;
 
+  /* BACKGROUND */
   --background-shading-percent: 70%;
 
-  --background-image: url("https://raw.githubusercontent.com/q-randomfemboy-p/Image-cycler-Discord-TP/main/b9a789aa5a073e660b58cf2a74bbf10e.jpg");
+  --background-image: url(
+    "https://raw.githubusercontent.com/q-randomfemboy-p/Image-cycler-Discord-TP/main/b9a789aa5a073e660b58cf2a74bbf10e.jpg"
+  );
 
   --background-position: center center;
   --background-size: cover;
@@ -33,21 +38,25 @@
     brightness(0.48)
     contrast(1.42);
 
+  /* POPOUT */
   --user-popout-image: var(--background-image);
   --user-popout-position: var(--background-position);
   --user-popout-size: var(--background-size);
   --user-popout-attachment: var(--background-attachment);
   --user-popout-filter: var(--background-filter);
 
+  /* MODAL */
   --user-modal-image: var(--background-image);
   --user-modal-position: var(--background-position);
   --user-modal-size: var(--background-size);
   --user-modal-attachment: var(--background-attachment);
   --user-modal-filter: var(--background-filter);
 
+  /* HOME */
   --home-icon: url("https://clearvision.github.io/icons/discord.svg");
   --home-size: 70%;
 
+  /* FONT */
   --main-font:
     "gg sans",
     "Helvetica Neue",
@@ -63,6 +72,7 @@
     Courier,
     monospace;
 
+  /* CHANNELS */
   --channel-normal: var(--interactive-text-default);
   --channel-muted: var(--interactive-muted);
   --channel-hover: #ffffff;
@@ -71,15 +81,15 @@
   --channel-unread: #e38a78;
   --channel-unread-hover: #ffffff;
 
+  /* ACCESSIBILITY */
   --focus-color: #ffffff;
 
   /* COVER */
   --cv-cover-width: 270px;
   --cv-cover-height: 38px;
-  --cv-cover-color: #000000;
   --cv-cover-x: 70px;
 
-  /* BUTTON GAP */
+  /* ACTION BUTTON GAP */
   --cv-button-gap: 75px;
 }
 
@@ -101,7 +111,7 @@
 
 
 /* =========================================================
-   DARKER THEME
+   DARKER
    ========================================================= */
 
 :is(.theme-darker, .theme-light .theme-darker) {
@@ -117,7 +127,7 @@
 
 
 /* =========================================================
-   MIDNIGHT THEME
+   MIDNIGHT
    ========================================================= */
 
 :is(.theme-midnight, .theme-light .theme-midnight) {
@@ -144,7 +154,7 @@ body,
 
 
 /* =========================================================
-   BACKGROUND
+   GOTHIC BACKGROUND
    ========================================================= */
 
 body::before {
@@ -503,40 +513,24 @@ body::after {
 
 
 /* =========================================================
-   WHITE ROUNDED BUTTON OUTLINES
-   ========================================================= */
-
-button,
-[role="button"],
-[class*="button_"],
-[class*="actionButton_"],
-[class*="profileButton_"],
-[class*="viewProfile_"] {
-
-  border:
-    1px solid rgba(255, 255, 255, 0.90) !important;
-
-  border-radius:
-    8px !important;
-
-  outline:
-    none !important;
-
-  box-shadow:
-    none !important;
-}
-
-
-/* =========================================================
-   BUTTON SPACING
+   INVISIBLE PROFILE / ACTION BUTTON OUTLINES
    ========================================================= */
 
 [class*="actionButtons_"],
 [class*="actionButtonContainer_"],
 [class*="profileActions_"] {
+  gap: 75px !important;
+}
 
-  gap:
-    var(--cv-button-gap) !important;
+[class*="actionButtons_"] button,
+[class*="actionButtonContainer_"] button,
+[class*="profileActions_"] button,
+[class*="profileButton_"],
+[class*="viewProfile_"] {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }
 
 
@@ -544,43 +538,14 @@ button,
    BUTTON HOVER
    ========================================================= */
 
-button:hover,
-[role="button"]:hover,
-[class*="button_"]:hover,
-[class*="actionButton_"]:hover,
+[class*="actionButtons_"] button:hover,
+[class*="actionButtonContainer_"] button:hover,
+[class*="profileActions_"] button:hover,
 [class*="profileButton_"]:hover,
 [class*="viewProfile_"]:hover {
-
-  border-color:
-    #ffffff !important;
-
-  border-radius:
-    8px !important;
-
-  box-shadow:
-    none !important;
-}
-
-
-/* =========================================================
-   BUTTON ACTIVE
-   ========================================================= */
-
-button:active,
-[role="button"]:active,
-[class*="button_"]:active,
-[class*="actionButton_"]:active,
-[class*="profileButton_"]:active,
-[class*="viewProfile_"]:active {
-
-  border-color:
-    #e38a78 !important;
-
-  border-radius:
-    8px !important;
-
-  box-shadow:
-    none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 
@@ -605,14 +570,11 @@ button:active,
   border:
     1px solid #ffffff !important;
 
-  border-radius:
-    10px !important;
+  border-radius: 10px !important;
 
-  box-shadow:
-    none !important;
+  box-shadow: none !important;
 
-  backdrop-filter:
-    blur(14px);
+  backdrop-filter: blur(14px);
 }
 
 
@@ -626,14 +588,11 @@ button:active,
   border:
     1px solid #ffffff !important;
 
-  border-radius:
-    12px !important;
+  border-radius: 12px !important;
 
-  box-shadow:
-    none !important;
+  box-shadow: none !important;
 
-  backdrop-filter:
-    blur(16px);
+  backdrop-filter: blur(16px);
 }
 
 
@@ -653,11 +612,9 @@ button:active,
 ::-webkit-scrollbar-thumb {
   background: rgba(227, 138, 120, 0.55);
 
-  border-radius:
-    10px;
+  border-radius: 10px;
 
-  box-shadow:
-    none !important;
+  box-shadow: none !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -676,11 +633,9 @@ button:active,
   border:
     1px solid #ffffff !important;
 
-  border-radius:
-    8px !important;
+  border-radius: 8px !important;
 
-  box-shadow:
-    none !important;
+  box-shadow: none !important;
 }
 
 
@@ -702,18 +657,15 @@ button:active,
   outline:
     1px solid #ffffff !important;
 
-  outline-offset:
-    2px;
+  outline-offset: 2px;
 
-  box-shadow:
-    none !important;
+  box-shadow: none !important;
 }
 
 
 /* =========================================================
    CLEARVISION 7.0.1 COVER
-   PURE BLACK
-   70PX RIGHT
+   PURE BLACK / 70PX RIGHT
    ========================================================= */
 
 #app-mount::after {
@@ -724,26 +676,18 @@ button:active,
   top: 0 !important;
   left: 0 !important;
 
-  width:
-    var(--cv-cover-width);
+  width: var(--cv-cover-width);
+  height: var(--cv-cover-height);
 
-  height:
-    var(--cv-cover-height);
+  background: #000000 !important;
 
-  background:
-    #000000 !important;
+  opacity: 1 !important;
 
-  opacity:
-    1 !important;
+  transform: translateX(70px);
 
-  transform:
-    translateX(70px);
+  z-index: 999999 !important;
 
-  z-index:
-    999999 !important;
-
-  pointer-events:
-    none !important;
+  pointer-events: none !important;
 }
 
 
