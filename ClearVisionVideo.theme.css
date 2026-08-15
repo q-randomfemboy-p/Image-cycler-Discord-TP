@@ -626,8 +626,9 @@ body::after {
    NAMEPLATES
    ========================================================= */
 
-[class*="nameplated_"],
-[class*="nameplate_"] {
+/* Keep the actual nameplate gradient */
+[class*="member"] [class*="nameplated_"] > [class*="container_"],
+[class*="dm"] [class*="interactive"] > [class*="container_"] [class*="nameplated_"] {
 
   background:
     linear-gradient(
@@ -643,18 +644,12 @@ body::after {
   border-radius:
     8px !important;
 
-  color:
-    #111111 !important;
-
   box-shadow:
     none !important;
 }
 
 
-/* =========================================================
-   NAME / USERNAME / TAG BUBBLES
-   ========================================================= */
-
+/* Flatten only the text/name content */
 [class*="nameTag_"],
 [class*="nameTag_"] *,
 [class*="username_"],
@@ -666,17 +661,11 @@ body::after {
 [class*="userTag_"],
 [class*="userTag_"] * {
 
-  background:
-    transparent !important;
-
   border:
     none !important;
 
   outline:
     none !important;
-
-  border-radius:
-    0 !important;
 
   box-shadow:
     none !important;
@@ -687,9 +676,6 @@ body::after {
    SERVER / GUILD TAGS
    ========================================================= */
 
-[class*="tag_"],
-[class*="tags_"],
-[class*="userTag_"],
 [class*="guildTag_"],
 [class*="clanTag_"],
 [class*="serverTag_"],
@@ -714,7 +700,7 @@ body::after {
 
 
 /* =========================================================
-   ROLE / BADGE BUBBLES
+   ROLES / BADGES
    ========================================================= */
 
 [class*="role_"],
@@ -740,14 +726,15 @@ body::after {
 
 
 /* =========================================================
-   CURRENT DISCORD BADGE CONTAINERS
+   PROFILE PICTURES / AVATARS
    ========================================================= */
 
-div[class^="container__"][aria-label^="User Badges"],
-span[class^="chipletContainerInner__"] {
-
-  background:
-    transparent !important;
+/* Wrapper around clickable / hoverable avatar */
+[class*="avatar_"],
+[class*="avatarContainer_"],
+[class*="avatarWrapper_"],
+[class*="avatarDecoration_"],
+[class*="avatarDecorationContainer_"] {
 
   border:
     none !important;
@@ -755,8 +742,256 @@ span[class^="chipletContainerInner__"] {
   outline:
     none !important;
 
+  box-shadow:
+    none !important;
+}
+
+
+/* Actual avatar media */
+[class*="avatar_"] img,
+[class*="avatar_"] svg,
+[class*="avatar_"] foreignObject,
+[class*="avatarWrapper_"] img,
+[class*="avatarWrapper_"] svg {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* Remove hover outlines/backgrounds from avatar wrappers */
+[class*="avatarWrapper_"]:hover,
+[class*="avatarContainer_"]:hover,
+[class*="avatarDecorationContainer_"]:hover {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+
+  background:
+    transparent !important;
+}
+
+
+/* =========================================================
+   MEDIA / IMAGE WRAPPERS
+   ========================================================= */
+
+/* Current Discord media wrapper patterns */
+[class*="visualMediaItemContainer_"],
+[class*="imageWrapper_"],
+[class*="imageContainer_"],
+[class*="mosaicItem_"],
+[class*="oneByOneGrid_"],
+[class*="visualMediaItem_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* Remove borders on hover as well */
+[class*="visualMediaItemContainer_"]:hover,
+[class*="imageWrapper_"]:hover,
+[class*="imageContainer_"]:hover,
+[class*="mosaicItem_"]:hover,
+[class*="oneByOneGrid_"]:hover,
+[class*="visualMediaItem_"]:hover {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+
+  background:
+    transparent !important;
+}
+
+
+/* Actual image content */
+[class*="imageWrapper_"] img,
+[class*="visualMediaItemContainer_"] img,
+[class*="mosaicItem_"] img {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+
   border-radius:
-    0 !important;
+    6px !important;
+}
+
+
+/* =========================================================
+   GIF / GIFV
+   ========================================================= */
+
+[class*="gif_"],
+[class*="gifv_"],
+[class*="embedGif_"],
+[class*="embedGIF_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+[class*="gif_"]:hover,
+[class*="gifv_"]:hover {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   EMBEDS
+   ========================================================= */
+
+[class*="embed_"]:not([class*="embedImage_"]),
+[class*="embedImage_"],
+[class*="embedVideo_"],
+[class*="embedMedia_"],
+[class*="embedThumbnail_"],
+[class*="embedProvider_"],
+[class*="embedAuthor_"],
+[class*="embedFooter_"] {
+
+  box-shadow:
+    none !important;
+
+  outline:
+    none !important;
+}
+
+
+/* Actual media inside embeds */
+[class*="embedImage_"],
+[class*="embedVideo_"],
+[class*="embedMedia_"],
+[class*="embedThumbnail_"] {
+
+  border:
+    none !important;
+
+  border-radius:
+    6px !important;
+}
+
+
+/* Hover state */
+[class*="embedImage_"]:hover,
+[class*="embedVideo_"]:hover,
+[class*="embedMedia_"]:hover,
+[class*="embedThumbnail_"]:hover {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   ATTACHMENTS / FILES
+   ========================================================= */
+
+[class*="attachment_"],
+[class*="attachments_"],
+[class*="fileWrapper_"],
+[class*="fileName_"],
+[class*="fileIcon_"] {
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* Media attachment wrappers */
+[class*="attachment_"],
+[class*="attachments_"] [class*="imageWrapper_"] {
+
+  border:
+    none !important;
+}
+
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+
+[class*="video_"],
+[class*="videoContainer_"],
+[class*="videoWrapper_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   SPOILER MEDIA
+   ========================================================= */
+
+[class*="spoilerContainer_"],
+[class*="spoilerContent_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
 
   box-shadow:
     none !important;
@@ -767,69 +1002,71 @@ span[class^="chipletContainerInner__"] {
    MUTUAL SERVERS
    ========================================================= */
 
-/* Current empty-state graphics */
+/* Actual mutual guild groups */
+[class*="mutualGuilds_"],
+[class*="mutualGuild_"],
+[class*="mutualServers_"],
+[class*="mutualServer_"],
+[class*="mutualFriends_"],
+[class*="mutualFriend_"] {
+
+  background:
+    transparent !important;
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  border-radius:
+    0 !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* Items inside mutual lists */
+[class*="mutualGuilds_"] *,
+[class*="mutualGuild_"] *,
+[class*="mutualServers_"] *,
+[class*="mutualServer_"] * {
+
+  box-shadow:
+    none !important;
+
+  outline:
+    none !important;
+}
+
+
+/* Hoverable mutual server items */
+[class*="mutualGuilds_"] [role="listitem"]:hover,
+[class*="mutualGuild_"]:hover,
+[class*="mutualServers_"] [role="listitem"]:hover,
+[class*="mutualServer_"]:hover {
+
+  background:
+    transparent !important;
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* Empty mutual-guild graphics */
 [class^="emptyIconGuilds__"],
 [class^="emptyIconFriends__"] {
 
   background:
     transparent !important;
-
-  border:
-    none !important;
-
-  outline:
-    none !important;
-
-  border-radius:
-    0 !important;
-
-  box-shadow:
-    none !important;
-}
-
-
-/* Mutual guild containers */
-[class*="mutualGuilds_"],
-[class*="mutualGuild_"],
-[class*="moreMutualGuilds_"],
-[class*="moreMutualGuildsBtn_"] {
-
-  background:
-    transparent !important;
-
-  border:
-    none !important;
-
-  outline:
-    none !important;
-
-  border-radius:
-    0 !important;
-
-  box-shadow:
-    none !important;
-}
-
-
-/* Mutual server rows/items */
-[class*="mutual"] [class*="guild"],
-[class*="mutual"] [class*="server"],
-[class*="mutualGuilds_"] *,
-[class*="mutualGuild_"] * {
-
-  box-shadow:
-    none !important;
-}
-
-
-/* =========================================================
-   PROFILE / MUTUAL FRIENDS / MUTUAL SERVERS SECTIONS
-   ========================================================= */
-
-[class*="mutualFriends_"],
-[class*="mutualFriend_"],
-[class*="mutualServers_"],
-[class*="mutualServer_"] {
 
   border:
     none !important;
@@ -846,26 +1083,8 @@ span[class^="chipletContainerInner__"] {
    PROFILE EFFECTS
    ========================================================= */
 
-[class*="profileEffects_"] {
-
-  border:
-    none !important;
-
-  outline:
-    none !important;
-
-  box-shadow:
-    none !important;
-}
-
-
-/* =========================================================
-   AVATAR / PROFILE IMAGE DECORATIONS
-   ========================================================= */
-
-img[class*="avatarDecoration_"],
-svg[class*="avatarDecoration_"],
-[class*="avatarDecoration_"] {
+[class*="profileEffects_"],
+[class*="profileEffect_"] {
 
   border:
     none !important;
@@ -882,7 +1101,6 @@ svg[class*="avatarDecoration_"],
    ROLE ICONS
    ========================================================= */
 
-img[class*="roleIcon__"],
 [class*="roleIcon__"] {
 
   border:
@@ -897,138 +1115,27 @@ img[class*="roleIcon__"],
 
 
 /* =========================================================
-   ATTACHMENTS / IMAGES / GIFS / VIDEOS
+   RETRY
    ========================================================= */
 
-[class*="attachment_"],
-[class*="attachments_"],
-[class*="imageWrapper_"],
-[class*="imageContainer_"],
-[class*="embed_"],
-[class*="embedWrapper_"],
-[class*="embedFull_"],
-[class*="embedMedia_"],
-[class*="mediaWrapper_"],
-[class*="mediaContainer_"],
-[class*="gif_"],
-[class*="gifv_"],
-[class*="video_"],
-[class*="videoContainer_"],
-[class*="spoilerContainer_"],
-[class*="fileWrapper_"] {
-
-  border:
-    none !important;
-
-  outline:
-    none !important;
-
-  box-shadow:
-    none !important;
-}
-
-
-/* =========================================================
-   IMAGE / GIF / VIDEO CONTENT
-   ========================================================= */
-
-[class*="imageWrapper_"] img,
-[class*="mediaWrapper_"] img,
-[class*="gif_"] img,
-[class*="gifv_"] img,
-[class*="video_"] video {
-
-  border:
-    none !important;
-
-  outline:
-    none !important;
-
-  box-shadow:
-    none !important;
-
-  border-radius:
-    6px !important;
-}
-
-
-/* =========================================================
-   EMBEDS
-   ========================================================= */
-
-[class*="embed_"],
-[class*="embedWrapper_"],
-[class*="embedFull_"] {
-
-  border-left:
-    none !important;
-
-  border-right:
-    none !important;
-
-  border-top:
-    none !important;
-
-  border-bottom:
-    none !important;
-
-  border-radius:
-    6px !important;
-
-  background:
-    rgba(0, 0, 0, 0.26) !important;
-}
-
-
-/* =========================================================
-   RETRY / FAILED CONTENT
-   ========================================================= */
-
-/* Accessible Retry buttons */
 button[aria-label="Retry"],
 [role="button"][aria-label="Retry"],
-[aria-label^="Retry"] {
-
-  border:
-    none !important;
-
-  outline:
-    none !important;
-
-  box-shadow:
-    none !important;
-
-  background:
-    transparent !important;
-
-  border-radius:
-    0 !important;
-}
-
-
-/* Retry containers / generated class names */
+[aria-label^="Retry"],
 [class*="retry_"],
 [class*="retryButton_"],
 [class*="retryContainer_"] {
 
+  background:
+    transparent !important;
+
   border:
     none !important;
 
   outline:
     none !important;
 
-  box-shadow:
-    none !important;
-
   border-radius:
     0 !important;
-}
-
-
-/* Failed media/content */
-[class*="failed_"],
-[class*="error_"] [class*="retry_"],
-[class*="loadingOverlay_"] {
 
   box-shadow:
     none !important;
@@ -1172,25 +1279,6 @@ button[aria-label="Retry"],
 
 
 /* =========================================================
-   PROFILE TAGS / ROLES
-   ========================================================= */
-
-[class*="profile_"] [class*="tag_"],
-[class*="profile_"] [class*="badge_"],
-[class*="profile_"] [class*="role_"] {
-
-  border:
-    none !important;
-
-  outline:
-    none !important;
-
-  box-shadow:
-    none !important;
-}
-
-
-/* =========================================================
    ACTUAL CLICKABLE UTILITY BUTTONS
    FAINT WHITE OUTLINE
    ========================================================= */
@@ -1241,41 +1329,32 @@ button,
 
 
 /* =========================================================
-   KEEP NON-BUTTON CONTENT FLAT
+   KEEP MEDIA / PROFILE CONTENT FLAT
    ========================================================= */
 
-[class*="nameTag_"],
-[class*="username_"],
-[class*="displayName_"],
-[class*="globalName_"],
-[class*="userTag_"],
-[class*="guildTag_"],
-[class*="clanTag_"],
-[class*="serverTag_"],
-[class*="clanTagChiplet_"],
-[class*="chipletContainerInner_"],
-[class*="role_"],
-[class*="roles_"],
-[class*="badge_"],
-[class*="profileBadge_"],
-[class*="tag_"],
-[class*="tags_"],
+[class*="avatar_"],
+[class*="avatarWrapper_"],
+[class*="avatarContainer_"],
+[class*="visualMediaItemContainer_"],
+[class*="imageWrapper_"],
+[class*="mosaicItem_"],
+[class*="oneByOneGrid_"],
+[class*="gif_"],
+[class*="gifv_"],
+[class*="embedImage_"],
+[class*="embedVideo_"],
+[class*="embedMedia_"],
+[class*="embedThumbnail_"],
 [class*="mutualGuilds_"],
 [class*="mutualGuild_"],
-[class*="mutualFriends_"],
-[class*="mutualFriend_"] {
-
-  border:
-    none !important;
-
-  outline:
-    none !important;
+[class*="mutualServers_"],
+[class*="mutualServer_"] {
 
   box-shadow:
     none !important;
 
-  border-radius:
-    0 !important;
+  outline:
+    none !important;
 }
 
 
