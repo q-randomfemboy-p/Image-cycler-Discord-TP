@@ -1,137 +1,74 @@
 /**
- * @name Gothic White Red
+ * @name Gothic White / Red
  * @author q-randomfemboy-p
  * @version 1.0.0
- * @description Gothic grayscale Discord theme with #e38a78 accents.
+ * @description Gothic grayscale ClearVision theme with #e38a78 accents.
  */
-
-/* =========================================================
-   CLEARVISION
-   ========================================================= */
 
 @import url("https://clearvision.github.io/ClearVision-v7/main.css");
 @import url("https://clearvision.github.io/ClearVision-v7/betterdiscord.css");
 
-
-/* =========================================================
-   ROOT
-   ========================================================= */
-
 :root {
-
-  /* ACCENT */
-
+  /* ACCENT COLORS */
   --main-color: #e38a78;
   --hover-color: #e38a78;
-
   --success-color: #b5b5b5;
   --danger-color: #e38a78;
 
+  /* STATUS COLORS */
   --online-color: #d0d0d0;
   --idle-color: #a0a0a0;
   --dnd-color: #e38a78;
   --streaming-color: #b0b0b0;
   --offline-color: #555555;
 
-
   /* BACKGROUND */
-
-  --background-image: url(
-    "https://raw.githubusercontent.com/q-randomfemboy-p/Image-cycler-Discord-TP/main/b9a789aa5a073e660b58cf2a74bbf10e.jpg"
-  );
-
+  --background-shading-percent: 70%;
+  --background-image: url("https://raw.githubusercontent.com/q-randomfemboy-p/Image-cycler-Discord-TP/main/b9a789aa5a073e660b58cf2a74bbf10e.jpg");
   --background-position: center center;
   --background-size: cover;
   --background-attachment: fixed;
+  --background-filter: grayscale(1) brightness(0.48) contrast(1.42);
 
-  --background-blur: 1px;
-  --background-brightness: 0.48;
-  --background-contrast: 1.42;
-  --background-saturation: 0;
+  /* USER POPOUT */
+  --user-popout-image: var(--background-image);
+  --user-popout-position: var(--background-position);
+  --user-popout-size: var(--background-size);
+  --user-popout-attachment: var(--background-attachment);
+  --user-popout-filter: var(--background-filter);
 
-
-  /* SHADING */
-
-  --background-shading-percent: 70%;
-
-  --card-shading: rgba(0, 0, 0, 0.76);
-  --popout-shading: rgba(0, 0, 0, 0.95);
-  --modal-shading: rgba(0, 0, 0, 0.97);
-  --input-shading: rgba(255, 255, 255, 0.055);
-
-
-  /* TEXT */
-
-  --normal-text: #ffffff;
-  --muted-text: #a4a4a4;
-
-
-  /* WHITE OUTLINES */
-
-  --gothic-outline: #ffffff;
-  --gothic-outline-soft: rgba(255, 255, 255, 0.45);
-
-
-  /* SELECTED / HOVER */
-
-  --selected-background: rgba(227, 138, 120, 0.28);
-  --selected-hover: rgba(227, 138, 120, 0.40);
-
+  /* USER MODAL */
+  --user-modal-image: var(--background-image);
+  --user-modal-position: var(--background-position);
+  --user-modal-size: var(--background-size);
+  --user-modal-attachment: var(--background-attachment);
+  --user-modal-filter: var(--background-filter);
 
   /* HOME ICON */
-
-  --home-icon:
-    url("https://clearvision.github.io/icons/discord.svg");
-
+  --home-icon: url("https://clearvision.github.io/icons/discord.svg");
   --home-size: 70%;
 
-
   /* FONTS */
+  --main-font: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --code-font: Consolas, "gg mono", "Liberation Mono", Menlo, Courier, monospace;
 
-  --main-font:
-    "gg sans",
-    "Helvetica Neue",
-    Helvetica,
-    Arial,
-    sans-serif;
+  /* CHANNEL COLORS */
+  --channel-normal: var(--interactive-text-default);
+  --channel-muted: var(--interactive-muted);
+  --channel-hover: #ffffff;
+  --channel-selected: #ffffff;
+  --channel-selected-bg: rgba(227, 138, 120, 0.28);
+  --channel-unread: #e38a78;
+  --channel-unread-hover: #ffffff;
 
-  --code-font:
-    Consolas,
-    "gg mono",
-    "Liberation Mono",
-    Menlo,
-    Courier,
-    monospace;
+  /* ACCESSIBILITY */
+  --focus-color: #ffffff;
 
-
-  /* CHANNELS */
-
-  --channel-normal:
-    var(--interactive-text-default);
-
-  --channel-muted:
-    var(--interactive-muted);
-
-  --channel-hover:
-    #ffffff;
-
-  --channel-selected:
-    #ffffff;
-
-  --channel-selected-bg:
-    rgba(227, 138, 120, 0.28);
-
-  --channel-unread:
-    #e38a78;
-
-  --channel-unread-hover:
-    #ffffff;
-
-
-  /* FOCUS */
-
-  --focus-color:
-    #ffffff;
+  /* COVER */
+  --cv-cover-width: 270px;
+  --cv-cover-height: 38px;
+  --cv-cover-color: #000000;
+  --cv-cover-x: 70px;
 }
 
 
@@ -140,27 +77,13 @@
    ========================================================= */
 
 :is(.theme-dark, .theme-light .theme-dark) {
-
-  --background-shading:
-    rgba(0, 0, 0, 0.52);
-
-  --card-shading:
-    rgba(0, 0, 0, 0.42);
-
-  --popout-shading:
-    rgba(0, 0, 0, 0.90);
-
-  --modal-shading:
-    rgba(0, 0, 0, 0.94);
-
-  --input-shading:
-    rgba(255, 255, 255, 0.05);
-
-  --normal-text:
-    #ffffff;
-
-  --muted-text:
-    #a4a4a4;
+  --background-shading: rgba(0, 0, 0, 0.52);
+  --card-shading: rgba(0, 0, 0, 0.42);
+  --popout-shading: rgba(0, 0, 0, 0.90);
+  --modal-shading: rgba(0, 0, 0, 0.94);
+  --input-shading: rgba(255, 255, 255, 0.05);
+  --normal-text: #ffffff;
+  --muted-text: #a4a4a4;
 }
 
 
@@ -169,27 +92,13 @@
    ========================================================= */
 
 :is(.theme-darker, .theme-light .theme-darker) {
-
-  --background-shading:
-    rgba(0, 0, 0, 0.64);
-
-  --card-shading:
-    rgba(0, 0, 0, 0.52);
-
-  --popout-shading:
-    rgba(0, 0, 0, 0.94);
-
-  --modal-shading:
-    rgba(0, 0, 0, 0.97);
-
-  --input-shading:
-    rgba(255, 255, 255, 0.05);
-
-  --normal-text:
-    #ffffff;
-
-  --muted-text:
-    #999999;
+  --background-shading: rgba(0, 0, 0, 0.64);
+  --card-shading: rgba(0, 0, 0, 0.52);
+  --popout-shading: rgba(0, 0, 0, 0.94);
+  --modal-shading: rgba(0, 0, 0, 0.97);
+  --input-shading: rgba(255, 255, 255, 0.05);
+  --normal-text: #ffffff;
+  --muted-text: #999999;
 }
 
 
@@ -198,27 +107,13 @@
    ========================================================= */
 
 :is(.theme-midnight, .theme-light .theme-midnight) {
-
-  --background-shading:
-    rgba(0, 0, 0, 0.82);
-
-  --card-shading:
-    rgba(0, 0, 0, 0.62);
-
-  --popout-shading:
-    rgba(0, 0, 0, 0.96);
-
-  --modal-shading:
-    rgba(0, 0, 0, 0.98);
-
-  --input-shading:
-    rgba(255, 255, 255, 0.04);
-
-  --normal-text:
-    #ffffff;
-
-  --muted-text:
-    #929292;
+  --background-shading: rgba(0, 0, 0, 0.82);
+  --card-shading: rgba(0, 0, 0, 0.62);
+  --popout-shading: rgba(0, 0, 0, 0.96);
+  --modal-shading: rgba(0, 0, 0, 0.98);
+  --input-shading: rgba(255, 255, 255, 0.04);
+  --normal-text: #ffffff;
+  --muted-text: #929292;
 }
 
 
@@ -238,63 +133,41 @@ body,
    ========================================================= */
 
 body::before {
-
   content: "";
-
   position: fixed;
-
   top: -20px;
   left: -20px;
   right: -20px;
   bottom: -20px;
-
   width: calc(100vw + 40px);
   height: calc(100vh + 40px);
-
   pointer-events: none;
-
   z-index: -100;
 
-  background-image:
-    var(--background-image);
-
-  background-position:
-    var(--background-position);
-
-  background-size:
-    var(--background-size);
-
-  background-repeat:
-    no-repeat;
-
-  background-attachment:
-    fixed;
+  background-image: var(--background-image);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   filter:
     grayscale(1)
-    blur(var(--background-blur))
-    brightness(var(--background-brightness))
-    contrast(var(--background-contrast));
+    brightness(0.48)
+    contrast(1.42);
 
-  transform:
-    scale(1.02);
+  transform: scale(1.02);
 }
 
 
 /* =========================================================
-   DARK OVERLAY
+   DARK CINEMATIC OVERLAY
    ========================================================= */
 
 body::after {
-
   content: "";
-
   position: fixed;
-
   inset: 0;
-
   pointer-events: none;
-
   z-index: -99;
 
   background:
@@ -313,15 +186,10 @@ body::after {
    ========================================================= */
 
 #app-mount::before {
-
   content: "";
-
   position: fixed;
-
   inset: 0;
-
   pointer-events: none;
-
   z-index: -98;
 
   background:
@@ -334,8 +202,13 @@ body::after {
 }
 
 
-#app-mount::after {
-  display: none !important;
+/* =========================================================
+   NO GLOW
+   ========================================================= */
+
+* {
+  text-shadow: none !important;
+  box-shadow: none !important;
 }
 
 
@@ -344,12 +217,8 @@ body::after {
    ========================================================= */
 
 [class*="guilds_"] {
-
-  background:
-    rgba(0, 0, 0, 0.90) !important;
-
-  border-right:
-    1px solid rgba(255, 255, 255, 0.45) !important;
+  background: rgba(0, 0, 0, 0.90) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.45) !important;
 }
 
 
@@ -358,12 +227,8 @@ body::after {
    ========================================================= */
 
 [class*="sidebar_"] {
-
-  background:
-    rgba(0, 0, 0, 0.80) !important;
-
-  border-right:
-    1px solid rgba(255, 255, 255, 0.45) !important;
+  background: rgba(0, 0, 0, 0.80) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.45) !important;
 }
 
 
@@ -372,16 +237,11 @@ body::after {
    ========================================================= */
 
 [class*="chat_"] {
-
-  background:
-    rgba(0, 0, 0, 0.44) !important;
+  background: rgba(0, 0, 0, 0.44) !important;
 }
 
-
 [class*="chatContent_"] {
-
-  background:
-    transparent !important;
+  background: transparent !important;
 }
 
 
@@ -390,19 +250,12 @@ body::after {
    ========================================================= */
 
 [class*="membersWrap_"] {
-
-  background:
-    rgba(0, 0, 0, 0.80) !important;
-
-  border-left:
-    1px solid rgba(255, 255, 255, 0.45) !important;
+  background: rgba(0, 0, 0, 0.80) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.45) !important;
 }
 
-
 [class*="members_"] {
-
-  background:
-    transparent !important;
+  background: transparent !important;
 }
 
 
@@ -411,12 +264,8 @@ body::after {
    ========================================================= */
 
 [class*="panels_"] {
-
-  background:
-    rgba(0, 0, 0, 0.90) !important;
-
-  border-top:
-    1px solid rgba(255, 255, 255, 0.45) !important;
+  background: rgba(0, 0, 0, 0.90) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.45) !important;
 }
 
 
@@ -426,20 +275,13 @@ body::after {
    ========================================================= */
 
 [class*="tutorialContainer_"] [class*="wrapper_"] {
-
-  border-radius:
-    12px !important;
-
-  overflow:
-    hidden !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
 }
-
 
 [class*="tutorialContainer_"] [class*="wrapper_"] img,
 [class*="tutorialContainer_"] [class*="wrapper_"] svg {
-
-  border-radius:
-    12px !important;
+  border-radius: 12px !important;
 }
 
 
@@ -449,36 +291,21 @@ body::after {
 
 [class*="modeSelectable_"]:hover,
 [class*="modeUnread_"]:hover {
-
-  background:
-    rgba(227, 138, 120, 0.28) !important;
-
-  border-radius:
-    8px !important;
-
-  box-shadow:
-    none !important;
+  background: rgba(227, 138, 120, 0.28) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
 }
 
 
 /* =========================================================
    SELECTED CHANNEL
-   SAME LOOK AS HOVER
    ========================================================= */
 
 [class*="modeSelected_"] {
-
-  background:
-    rgba(227, 138, 120, 0.28) !important;
-
-  border-radius:
-    8px !important;
-
-  opacity:
-    1 !important;
-
-  box-shadow:
-    none !important;
+  background: rgba(227, 138, 120, 0.28) !important;
+  border-radius: 8px !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
 }
 
 
@@ -487,15 +314,9 @@ body::after {
    ========================================================= */
 
 [class*="modeSelected_"]::before {
-
-  background:
-    #e38a78 !important;
-
-  border-radius:
-    4px !important;
-
-  box-shadow:
-    none !important;
+  background: #e38a78 !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
 }
 
 
@@ -504,71 +325,39 @@ body::after {
    ========================================================= */
 
 [class*="modeSelected_"] [class*="name_"] {
-
-  color:
-    #ffffff !important;
-
-  text-shadow:
-    none !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
 }
 
 
 /* =========================================================
-   PREVENT SOLID SELECTED SQUARES
+   SELECTED ITEMS
    ========================================================= */
 
 [class*="selected_"] {
-
-  background:
-    transparent !important;
-
-  box-shadow:
-    none !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
-
-
-/* =========================================================
-   OTHER SELECTED ITEMS
-   ========================================================= */
 
 [class*="selected_"]:not([class*="modeSelected_"]) {
-
-  background:
-    rgba(227, 138, 120, 0.28) !important;
-
-  border-radius:
-    8px !important;
-
-  box-shadow:
-    none !important;
+  background: rgba(227, 138, 120, 0.28) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
 }
 
-
-/* =========================================================
-   SELECTED HOVER
-   ========================================================= */
-
 [class*="selected_"]:hover {
-
-  background:
-    rgba(227, 138, 120, 0.40) !important;
-
-  border-radius:
-    8px !important;
-
-  box-shadow:
-    none !important;
+  background: rgba(227, 138, 120, 0.40) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
 }
 
 
 /* =========================================================
    NAMEPLATES
-   RED → WHITE GRADIENT
    ========================================================= */
 
 [class*="nameplated_"],
 [class*="nameplate_"] {
-
   background:
     linear-gradient(
       90deg,
@@ -577,32 +366,16 @@ body::after {
       #ffffff 100%
     ) !important;
 
-  border:
-    1px solid #ffffff !important;
-
-  border-radius:
-    8px !important;
-
-  color:
-    #111111 !important;
-
-  box-shadow:
-    none !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 8px !important;
+  color: #111111 !important;
+  box-shadow: none !important;
 }
-
-
-/* =========================================================
-   NAMEPLATE TEXT
-   ========================================================= */
 
 [class*="nameplated_"] *,
 [class*="nameplate_"] * {
-
-  color:
-    #111111 !important;
-
-  text-shadow:
-    none !important;
+  color: #111111 !important;
+  text-shadow: none !important;
 }
 
 
@@ -611,9 +384,7 @@ body::after {
    ========================================================= */
 
 [class*="message_"]:hover {
-
-  background:
-    rgba(227, 138, 120, 0.10) !important;
+  background: rgba(227, 138, 120, 0.10) !important;
 }
 
 
@@ -622,55 +393,69 @@ body::after {
    ========================================================= */
 
 [class*="channelTextArea_"] {
-
-  background:
-    rgba(0, 0, 0, 0.72) !important;
-
-  border:
-    1px solid #ffffff !important;
-
-  border-radius:
-    8px !important;
-
-  box-shadow:
-    none !important;
+  background: rgba(0, 0, 0, 0.72) !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
 }
 
-
 [class*="channelTextArea_"]:focus-within {
-
-  border-color:
-    #ffffff !important;
-
-  box-shadow:
-    none !important;
+  border-color: #ffffff !important;
+  box-shadow: none !important;
 }
 
 
 /* =========================================================
-   SEARCH
+   FIND OR START A CONVERSATION
+   REMOVE BOX
    ========================================================= */
 
 [class*="searchBar_"] {
+  background: rgba(0, 0, 0, 0.72) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
 
-  background:
-    rgba(0, 0, 0, 0.72) !important;
+[class*="searchBar_"]:focus-within {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
 
-  border:
-    1px solid #ffffff !important;
-
-  box-shadow:
-    none !important;
+[class*="search_"] [class*="container_"] {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 
-[class*="searchBar_"]:focus-within {
+/* =========================================================
+   VIEW FULL PROFILE
+   REMOVE BOX
+   ========================================================= */
 
-  border-color:
-    #ffffff !important;
+[class*="userProfile_"],
+[class*="profilePanel_"] {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
 
-  box-shadow:
-    none !important;
+[class*="profile_"] [class*="container_"] {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+/* =========================================================
+   PEOPLE / FRIENDS
+   ========================================================= */
+
+[class*="peopleColumn_"],
+[class*="nowPlayingColumn_"] {
+  border: none !important;
 }
 
 
@@ -680,18 +465,10 @@ body::after {
 
 [class*="menu_"],
 [class*="popout_"] {
-
-  background:
-    rgba(5, 5, 5, 0.98) !important;
-
-  border:
-    1px solid #ffffff !important;
-
-  box-shadow:
-    none !important;
-
-  backdrop-filter:
-    blur(14px);
+  background: rgba(5, 5, 5, 0.98) !important;
+  border: 1px solid #ffffff !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(14px);
 }
 
 
@@ -700,18 +477,10 @@ body::after {
    ========================================================= */
 
 [class*="modal_"] {
-
-  background:
-    rgba(5, 5, 5, 0.98) !important;
-
-  border:
-    1px solid #ffffff !important;
-
-  box-shadow:
-    none !important;
-
-  backdrop-filter:
-    blur(16px);
+  background: rgba(5, 5, 5, 0.98) !important;
+  border: 1px solid #ffffff !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(16px);
 }
 
 
@@ -722,12 +491,8 @@ body::after {
 button,
 button:hover,
 button:focus {
-
-  box-shadow:
-    none !important;
-
-  text-shadow:
-    none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
 
 
@@ -736,42 +501,23 @@ button:focus {
    ========================================================= */
 
 ::-webkit-scrollbar {
-
-  width:
-    7px;
-
-  height:
-    7px;
+  width: 7px;
+  height: 7px;
 }
-
 
 ::-webkit-scrollbar-track {
-
-  background:
-    rgba(0, 0, 0, 0.50);
+  background: rgba(0, 0, 0, 0.50);
 }
-
 
 ::-webkit-scrollbar-thumb {
-
-  background:
-    rgba(227, 138, 120, 0.55);
-
-  border-radius:
-    10px;
-
-  box-shadow:
-    none !important;
+  background: rgba(227, 138, 120, 0.55);
+  border-radius: 10px;
+  box-shadow: none !important;
 }
 
-
 ::-webkit-scrollbar-thumb:hover {
-
-  background:
-    #e38a78;
-
-  box-shadow:
-    none !important;
+  background: #e38a78;
+  box-shadow: none !important;
 }
 
 
@@ -780,18 +526,9 @@ button:focus {
    ========================================================= */
 
 [class*="tooltip_"] {
-
-  background:
-    #050505 !important;
-
-  border:
-    1px solid #ffffff !important;
-
-  box-shadow:
-    none !important;
-
-  text-shadow:
-    none !important;
+  background: #050505 !important;
+  border: 1px solid #ffffff !important;
+  box-shadow: none !important;
 }
 
 
@@ -800,9 +537,7 @@ button:focus {
    ========================================================= */
 
 [class*="divider_"] {
-
-  border-color:
-    rgba(255, 255, 255, 0.55) !important;
+  border-color: rgba(255, 255, 255, 0.55) !important;
 }
 
 
@@ -811,24 +546,41 @@ button:focus {
    ========================================================= */
 
 *:focus-visible {
-
-  outline:
-    1px solid #ffffff !important;
-
-  outline-offset:
-    2px;
-
-  box-shadow:
-    none !important;
+  outline: 1px solid #ffffff !important;
+  outline-offset: 2px;
+  box-shadow: none !important;
 }
 
 
 /* =========================================================
-   NO GLOW
+   CLEARVISION 7.0.1 COVER
+   PURE BLACK
+   MOVED RIGHT WITHOUT USING LEFT POSITION
    ========================================================= */
 
-* {
+#app-mount::after {
+  content: "";
 
-  text-shadow:
-    none !important;
+  position: fixed;
+
+  top: 0 !important;
+  left: 0 !important;
+
+  width: var(--cv-cover-width);
+  height: var(--cv-cover-height);
+
+  background: #000000 !important;
+
+  opacity: 1 !important;
+
+  transform: translateX(var(--cv-cover-x));
+
+  z-index: 999999 !important;
+
+  pointer-events: none !important;
 }
+
+
+/* =========================================================
+   END
+   ========================================================= */
