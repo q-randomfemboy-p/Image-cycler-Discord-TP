@@ -30,7 +30,9 @@
   --offline-color: #555555;
 
 
-  /* BACKGROUND */
+  /* =======================================================
+     BACKGROUND
+     ======================================================= */
 
   --background-shading-percent: 70%;
 
@@ -48,33 +50,60 @@
     contrast(1.42);
 
 
-  /* POPOUT */
+  /* =======================================================
+     POPOUT
+     ======================================================= */
 
-  --user-popout-image: var(--background-image);
-  --user-popout-position: var(--background-position);
-  --user-popout-size: var(--background-size);
-  --user-popout-attachment: var(--background-attachment);
-  --user-popout-filter: var(--background-filter);
+  --user-popout-image:
+    var(--background-image);
+
+  --user-popout-position:
+    var(--background-position);
+
+  --user-popout-size:
+    var(--background-size);
+
+  --user-popout-attachment:
+    var(--background-attachment);
+
+  --user-popout-filter:
+    var(--background-filter);
 
 
-  /* MODAL */
+  /* =======================================================
+     MODAL
+     ======================================================= */
 
-  --user-modal-image: var(--background-image);
-  --user-modal-position: var(--background-position);
-  --user-modal-size: var(--background-size);
-  --user-modal-attachment: var(--background-attachment);
-  --user-modal-filter: var(--background-filter);
+  --user-modal-image:
+    var(--background-image);
+
+  --user-modal-position:
+    var(--background-position);
+
+  --user-modal-size:
+    var(--background-size);
+
+  --user-modal-attachment:
+    var(--background-attachment);
+
+  --user-modal-filter:
+    var(--background-filter);
 
 
-  /* HOME */
+  /* =======================================================
+     HOME
+     ======================================================= */
 
   --home-icon:
     url("https://clearvision.github.io/icons/discord.svg");
 
-  --home-size: 70%;
+  --home-size:
+    70%;
 
 
-  /* FONT */
+  /* =======================================================
+     FONTS
+     ======================================================= */
 
   --main-font:
     "gg sans",
@@ -92,7 +121,9 @@
     monospace;
 
 
-  /* CHANNELS */
+  /* =======================================================
+     CHANNELS
+     ======================================================= */
 
   --channel-normal:
     var(--interactive-text-default);
@@ -116,7 +147,9 @@
     #ffffff;
 
 
-  /* ACCESSIBILITY */
+  /* =======================================================
+     ACCESSIBILITY
+     ======================================================= */
 
   --focus-color:
     #ffffff;
@@ -126,16 +159,22 @@
      CLEARVISION COVER
      ======================================================= */
 
-  --cv-cover-width: 270px;
-  --cv-cover-height: 38px;
-  --cv-cover-x: 74px;
+  --cv-cover-width:
+    270px;
+
+  --cv-cover-height:
+    38px;
+
+  --cv-cover-x:
+    74px;
 
 
   /* =======================================================
-     PROFILE BUTTON SPACING
+     PROFILE ACTION SPACING
      ======================================================= */
 
-  --cv-button-gap: 75px;
+  --cv-button-gap:
+    75px;
 }
 
 
@@ -233,7 +272,8 @@
 html,
 body,
 #app-mount {
-  background: transparent !important;
+  background:
+    transparent !important;
 }
 
 
@@ -243,14 +283,23 @@ body,
 
 body::before {
 
-  content: "";
+  content:
+    "";
 
-  position: fixed;
+  position:
+    fixed;
 
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
+  top:
+    -20px;
+
+  left:
+    -20px;
+
+  right:
+    -20px;
+
+  bottom:
+    -20px;
 
   width:
     calc(100vw + 40px);
@@ -295,11 +344,14 @@ body::before {
 
 body::after {
 
-  content: "";
+  content:
+    "";
 
-  position: fixed;
+  position:
+    fixed;
 
-  inset: 0;
+  inset:
+    0;
 
   pointer-events:
     none;
@@ -324,11 +376,14 @@ body::after {
 
 #app-mount::before {
 
-  content: "";
+  content:
+    "";
 
-  position: fixed;
+  position:
+    fixed;
 
-  inset: 0;
+  inset:
+    0;
 
   pointer-events:
     none;
@@ -397,7 +452,6 @@ body::after {
     rgba(0, 0, 0, 0.44) !important;
 }
 
-
 [class*="chatContent_"] {
 
   background:
@@ -417,7 +471,6 @@ body::after {
   border-left:
     1px solid rgba(255, 255, 255, 0.45) !important;
 }
-
 
 [class*="members_"] {
 
@@ -453,7 +506,6 @@ body::after {
   overflow:
     hidden !important;
 }
-
 
 [class*="tutorialContainer_"] [class*="wrapper_"] img,
 [class*="tutorialContainer_"] [class*="wrapper_"] svg {
@@ -545,7 +597,6 @@ body::after {
     none !important;
 }
 
-
 [class*="selected_"]:not([class*="modeSelected_"]) {
 
   background:
@@ -557,7 +608,6 @@ body::after {
   box-shadow:
     none !important;
 }
-
 
 [class*="selected_"]:hover {
 
@@ -574,7 +624,6 @@ body::after {
 
 /* =========================================================
    NAMEPLATES
-   RED → WHITE
    ========================================================= */
 
 [class*="nameplated_"],
@@ -601,7 +650,6 @@ body::after {
     none !important;
 }
 
-
 [class*="nameplated_"] *,
 [class*="nameplate_"] * {
 
@@ -609,6 +657,88 @@ body::after {
     #111111 !important;
 
   text-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   REMOVE NAME / USERNAME / TAG BUBBLES
+   ========================================================= */
+
+[class*="nameTag_"],
+[class*="nameTag_"] *,
+[class*="username_"],
+[class*="username_"] *,
+[class*="displayName_"],
+[class*="displayName_"] *,
+[class*="globalName_"],
+[class*="globalName_"] *,
+[class*="userTag_"],
+[class*="userTag_"] * {
+
+  background:
+    transparent !important;
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  border-radius:
+    0 !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   NAMEPLATE / TAG CONTAINERS
+   ========================================================= */
+
+[class*="nameplated_"],
+[class*="nameplate_"],
+[class*="tag_"],
+[class*="tags_"],
+[class*="chip_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  border-radius:
+    0 !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   ROLE / BADGE BUBBLES
+   ========================================================= */
+
+[class*="role_"],
+[class*="roles_"],
+[class*="badge_"],
+[class*="profileBadge_"] {
+
+  background:
+    transparent !important;
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  border-radius:
+    0 !important;
+
+  box-shadow:
     none !important;
 }
 
@@ -643,7 +773,6 @@ body::after {
     none !important;
 }
 
-
 [class*="channelTextArea_"]:focus-within {
 
   border-color:
@@ -674,7 +803,6 @@ body::after {
     none !important;
 }
 
-
 [class*="searchBar_"]:focus-within {
 
   border:
@@ -686,7 +814,6 @@ body::after {
   box-shadow:
     none !important;
 }
-
 
 [class*="search_"] [class*="container_"] {
 
@@ -703,7 +830,6 @@ body::after {
 
 /* =========================================================
    PROFILE / VIEW FULL PROFILE
-   REMOVE OUTLINES
    ========================================================= */
 
 [class*="userProfile_"],
@@ -718,7 +844,6 @@ body::after {
   box-shadow:
     none !important;
 }
-
 
 [class*="profile_"] [class*="container_"] {
 
@@ -735,8 +860,7 @@ body::after {
 
 /* =========================================================
    PROFILE ACTIONS
-   REMOVE FRIEND / BLOCK / TAGS / NAME ACTIONS
-   NO VISIBLE OUTLINE
+   REMOVE FRIEND / BLOCK / TAGS
    ========================================================= */
 
 [class*="profileActions_"],
@@ -757,7 +881,7 @@ body::after {
 
 
 /* =========================================================
-   PROFILE TAGS / BADGES / ROLES
+   PROFILE TAGS / ROLES
    ========================================================= */
 
 [class*="profile_"] [class*="tag_"],
@@ -777,7 +901,7 @@ body::after {
 
 /* =========================================================
    ACTUAL CLICKABLE UTILITY BUTTONS
-   FAINT WHITE ROUNDED OUTLINE
+   VERY FAINT WHITE ROUNDED OUTLINE
    ========================================================= */
 
 [class*="iconButton_"],
@@ -805,8 +929,7 @@ body::after {
 
 
 /* =========================================================
-   GENERIC BUTTONS
-   FAINT OUTLINE
+   GENERIC CLICKABLE BUTTONS
    ========================================================= */
 
 button,
@@ -817,6 +940,34 @@ button,
 
   border-radius:
     10px !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   REMOVE OUTLINE FROM NAME / TAG ELEMENTS AGAIN
+   ========================================================= */
+
+[class*="nameTag_"],
+[class*="username_"],
+[class*="displayName_"],
+[class*="globalName_"],
+[class*="userTag_"],
+[class*="role_"],
+[class*="roles_"],
+[class*="badge_"],
+[class*="profileBadge_"],
+[class*="tag_"],
+[class*="tags_"],
+[class*="chip_"] {
+
+  border:
+    none !important;
 
   outline:
     none !important;
@@ -870,7 +1021,7 @@ button:active,
 
 
 /* =========================================================
-   PROFILE ACTION CONTAINER SPACING
+   PROFILE ACTION SPACING
    ========================================================= */
 
 [class*="actionButtons_"],
@@ -954,13 +1105,11 @@ button:active,
     7px;
 }
 
-
 ::-webkit-scrollbar-track {
 
   background:
     rgba(0, 0, 0, 0.50);
 }
-
 
 ::-webkit-scrollbar-thumb {
 
@@ -973,7 +1122,6 @@ button:active,
   box-shadow:
     none !important;
 }
-
 
 ::-webkit-scrollbar-thumb:hover {
 
