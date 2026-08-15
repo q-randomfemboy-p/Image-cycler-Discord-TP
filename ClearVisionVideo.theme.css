@@ -1,5 +1,5 @@
 /**
- * @name Gothic White/Red
+ * @name Gothic White Red
  * @author q-randomfemboy-p
  * @version 1.0.0
  * @description Gothic grayscale Discord theme with #e38a78 accents.
@@ -19,7 +19,7 @@
 
 :root {
 
-  /* MAIN ACCENT */
+  /* ACCENT */
 
   --main-color: #e38a78;
   --hover-color: #e38a78;
@@ -68,15 +68,14 @@
 
   /* WHITE OUTLINES */
 
-  --gothic-red: #ffffff;
-  --gothic-red-soft: rgba(255, 255, 255, 0.45);
-  --gothic-red-hover: #ffffff;
+  --gothic-outline: #ffffff;
+  --gothic-outline-soft: rgba(255, 255, 255, 0.45);
 
 
   /* SELECTED / HOVER */
 
-  --selected-red: rgba(227, 138, 120, 0.28);
-  --selected-red-hover: rgba(227, 138, 120, 0.40);
+  --selected-background: rgba(227, 138, 120, 0.28);
+  --selected-hover: rgba(227, 138, 120, 0.40);
 
 
   /* HOME ICON */
@@ -166,7 +165,7 @@
 
 
 /* =========================================================
-   DARKER
+   DARKER THEME
    ========================================================= */
 
 :is(.theme-darker, .theme-light .theme-darker) {
@@ -195,7 +194,7 @@
 
 
 /* =========================================================
-   MIDNIGHT
+   MIDNIGHT THEME
    ========================================================= */
 
 :is(.theme-midnight, .theme-light .theme-midnight) {
@@ -235,7 +234,7 @@ body,
 
 
 /* =========================================================
-   BACKGROUND
+   GOTHIC BACKGROUND
    ========================================================= */
 
 body::before {
@@ -373,12 +372,16 @@ body::after {
    ========================================================= */
 
 [class*="chat_"] {
-  background: rgba(0, 0, 0, 0.44) !important;
+
+  background:
+    rgba(0, 0, 0, 0.44) !important;
 }
 
 
 [class*="chatContent_"] {
-  background: transparent !important;
+
+  background:
+    transparent !important;
 }
 
 
@@ -397,7 +400,9 @@ body::after {
 
 
 [class*="members_"] {
-  background: transparent !important;
+
+  background:
+    transparent !important;
 }
 
 
@@ -458,7 +463,7 @@ body::after {
 
 /* =========================================================
    SELECTED CHANNEL
-   SAME STYLE AS HOVER
+   SAME LOOK AS HOVER
    ========================================================= */
 
 [class*="modeSelected_"] {
@@ -558,7 +563,7 @@ body::after {
 
 /* =========================================================
    NAMEPLATES
-   RED → WHITE
+   RED → WHITE GRADIENT
    ========================================================= */
 
 [class*="nameplated_"],
@@ -613,7 +618,7 @@ body::after {
 
 
 /* =========================================================
-   INPUT
+   MESSAGE INPUT
    ========================================================= */
 
 [class*="channelTextArea_"] {
@@ -625,7 +630,7 @@ body::after {
     1px solid #ffffff !important;
 
   border-radius:
-    8px;
+    8px !important;
 
   box-shadow:
     none !important;
@@ -819,22 +824,11 @@ button:focus {
 
 
 /* =========================================================
-   HIDE CLEARVISION BRANDING
-   ========================================================= */
-
-[class*="themeInfo_"],
-[class*="themeVersion_"] {
-
-  display:
-    none !important;
-}
-
-
-/* =========================================================
    NO GLOW
    ========================================================= */
 
 * {
+
   text-shadow:
     none !important;
 }
