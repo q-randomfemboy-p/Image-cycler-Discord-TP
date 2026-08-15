@@ -8,21 +8,30 @@
 @import url("https://clearvision.github.io/ClearVision-v7/main.css");
 @import url("https://clearvision.github.io/ClearVision-v7/betterdiscord.css");
 
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
 :root {
+
   /* ACCENT */
+
   --main-color: #e38a78;
   --hover-color: #e38a78;
+
   --success-color: #b5b5b5;
   --danger-color: #e38a78;
 
-  /* STATUS */
   --online-color: #d0d0d0;
   --idle-color: #a0a0a0;
   --dnd-color: #e38a78;
   --streaming-color: #b0b0b0;
   --offline-color: #555555;
 
+
   /* BACKGROUND */
+
   --background-shading-percent: 70%;
 
   --background-image: url(
@@ -38,25 +47,35 @@
     brightness(0.48)
     contrast(1.42);
 
+
   /* POPOUT */
+
   --user-popout-image: var(--background-image);
   --user-popout-position: var(--background-position);
   --user-popout-size: var(--background-size);
   --user-popout-attachment: var(--background-attachment);
   --user-popout-filter: var(--background-filter);
 
+
   /* MODAL */
+
   --user-modal-image: var(--background-image);
   --user-modal-position: var(--background-position);
   --user-modal-size: var(--background-size);
   --user-modal-attachment: var(--background-attachment);
   --user-modal-filter: var(--background-filter);
 
+
   /* HOME */
-  --home-icon: url("https://clearvision.github.io/icons/discord.svg");
+
+  --home-icon:
+    url("https://clearvision.github.io/icons/discord.svg");
+
   --home-size: 70%;
 
+
   /* FONT */
+
   --main-font:
     "gg sans",
     "Helvetica Neue",
@@ -72,24 +91,50 @@
     Courier,
     monospace;
 
+
   /* CHANNELS */
-  --channel-normal: var(--interactive-text-default);
-  --channel-muted: var(--interactive-muted);
-  --channel-hover: #ffffff;
-  --channel-selected: #ffffff;
-  --channel-selected-bg: rgba(227, 138, 120, 0.28);
-  --channel-unread: #e38a78;
-  --channel-unread-hover: #ffffff;
+
+  --channel-normal:
+    var(--interactive-text-default);
+
+  --channel-muted:
+    var(--interactive-muted);
+
+  --channel-hover:
+    #ffffff;
+
+  --channel-selected:
+    #ffffff;
+
+  --channel-selected-bg:
+    rgba(227, 138, 120, 0.28);
+
+  --channel-unread:
+    #e38a78;
+
+  --channel-unread-hover:
+    #ffffff;
+
 
   /* ACCESSIBILITY */
-  --focus-color: #ffffff;
 
-  /* COVER */
+  --focus-color:
+    #ffffff;
+
+
+  /* =======================================================
+     CLEARVISION COVER
+     ======================================================= */
+
   --cv-cover-width: 270px;
   --cv-cover-height: 38px;
-  --cv-cover-x: 70px;
+  --cv-cover-x: 74px;
 
-  /* ACTION BUTTON GAP */
+
+  /* =======================================================
+     PROFILE BUTTON SPACING
+     ======================================================= */
+
   --cv-button-gap: 75px;
 }
 
@@ -99,46 +144,85 @@
    ========================================================= */
 
 :is(.theme-dark, .theme-light .theme-dark) {
-  --background-shading: rgba(0, 0, 0, 0.52);
-  --card-shading: rgba(0, 0, 0, 0.42);
-  --popout-shading: rgba(0, 0, 0, 0.90);
-  --modal-shading: rgba(0, 0, 0, 0.94);
-  --input-shading: rgba(255, 255, 255, 0.05);
 
-  --normal-text: #ffffff;
-  --muted-text: #a4a4a4;
+  --background-shading:
+    rgba(0, 0, 0, 0.52);
+
+  --card-shading:
+    rgba(0, 0, 0, 0.42);
+
+  --popout-shading:
+    rgba(0, 0, 0, 0.90);
+
+  --modal-shading:
+    rgba(0, 0, 0, 0.94);
+
+  --input-shading:
+    rgba(255, 255, 255, 0.05);
+
+  --normal-text:
+    #ffffff;
+
+  --muted-text:
+    #a4a4a4;
 }
 
 
 /* =========================================================
-   DARKER
+   DARKER THEME
    ========================================================= */
 
 :is(.theme-darker, .theme-light .theme-darker) {
-  --background-shading: rgba(0, 0, 0, 0.64);
-  --card-shading: rgba(0, 0, 0, 0.52);
-  --popout-shading: rgba(0, 0, 0, 0.94);
-  --modal-shading: rgba(0, 0, 0, 0.97);
-  --input-shading: rgba(255, 255, 255, 0.05);
 
-  --normal-text: #ffffff;
-  --muted-text: #999999;
+  --background-shading:
+    rgba(0, 0, 0, 0.64);
+
+  --card-shading:
+    rgba(0, 0, 0, 0.52);
+
+  --popout-shading:
+    rgba(0, 0, 0, 0.94);
+
+  --modal-shading:
+    rgba(0, 0, 0, 0.97);
+
+  --input-shading:
+    rgba(255, 255, 255, 0.05);
+
+  --normal-text:
+    #ffffff;
+
+  --muted-text:
+    #999999;
 }
 
 
 /* =========================================================
-   MIDNIGHT
+   MIDNIGHT THEME
    ========================================================= */
 
 :is(.theme-midnight, .theme-light .theme-midnight) {
-  --background-shading: rgba(0, 0, 0, 0.82);
-  --card-shading: rgba(0, 0, 0, 0.62);
-  --popout-shading: rgba(0, 0, 0, 0.96);
-  --modal-shading: rgba(0, 0, 0, 0.98);
-  --input-shading: rgba(255, 255, 255, 0.04);
 
-  --normal-text: #ffffff;
-  --muted-text: #929292;
+  --background-shading:
+    rgba(0, 0, 0, 0.82);
+
+  --card-shading:
+    rgba(0, 0, 0, 0.62);
+
+  --popout-shading:
+    rgba(0, 0, 0, 0.96);
+
+  --modal-shading:
+    rgba(0, 0, 0, 0.98);
+
+  --input-shading:
+    rgba(255, 255, 255, 0.04);
+
+  --normal-text:
+    #ffffff;
+
+  --muted-text:
+    #929292;
 }
 
 
@@ -158,6 +242,7 @@ body,
    ========================================================= */
 
 body::before {
+
   content: "";
 
   position: fixed;
@@ -167,39 +252,60 @@ body::before {
   right: -20px;
   bottom: -20px;
 
-  width: calc(100vw + 40px);
-  height: calc(100vh + 40px);
+  width:
+    calc(100vw + 40px);
 
-  pointer-events: none;
-  z-index: -100;
+  height:
+    calc(100vh + 40px);
 
-  background-image: var(--background-image);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  pointer-events:
+    none;
+
+  z-index:
+    -100;
+
+  background-image:
+    var(--background-image);
+
+  background-position:
+    center center;
+
+  background-size:
+    cover;
+
+  background-repeat:
+    no-repeat;
+
+  background-attachment:
+    fixed;
 
   filter:
     grayscale(1)
     brightness(0.48)
     contrast(1.42);
 
-  transform: scale(1.02);
+  transform:
+    scale(1.02);
 }
 
 
 /* =========================================================
-   DARK OVERLAY
+   DARK CINEMATIC OVERLAY
    ========================================================= */
 
 body::after {
+
   content: "";
 
   position: fixed;
+
   inset: 0;
 
-  pointer-events: none;
-  z-index: -99;
+  pointer-events:
+    none;
+
+  z-index:
+    -99;
 
   background:
     linear-gradient(
@@ -217,13 +323,18 @@ body::after {
    ========================================================= */
 
 #app-mount::before {
+
   content: "";
 
   position: fixed;
+
   inset: 0;
 
-  pointer-events: none;
-  z-index: -98;
+  pointer-events:
+    none;
+
+  z-index:
+    -98;
 
   background:
     radial-gradient(
@@ -240,8 +351,11 @@ body::after {
    ========================================================= */
 
 * {
-  text-shadow: none !important;
-  box-shadow: none !important;
+  text-shadow:
+    none !important;
+
+  box-shadow:
+    none !important;
 }
 
 
@@ -250,7 +364,9 @@ body::after {
    ========================================================= */
 
 [class*="guilds_"] {
-  background: rgba(0, 0, 0, 0.90) !important;
+
+  background:
+    rgba(0, 0, 0, 0.90) !important;
 
   border-right:
     1px solid rgba(255, 255, 255, 0.45) !important;
@@ -262,7 +378,9 @@ body::after {
    ========================================================= */
 
 [class*="sidebar_"] {
-  background: rgba(0, 0, 0, 0.80) !important;
+
+  background:
+    rgba(0, 0, 0, 0.80) !important;
 
   border-right:
     1px solid rgba(255, 255, 255, 0.45) !important;
@@ -274,11 +392,16 @@ body::after {
    ========================================================= */
 
 [class*="chat_"] {
-  background: rgba(0, 0, 0, 0.44) !important;
+
+  background:
+    rgba(0, 0, 0, 0.44) !important;
 }
 
+
 [class*="chatContent_"] {
-  background: transparent !important;
+
+  background:
+    transparent !important;
 }
 
 
@@ -287,14 +410,19 @@ body::after {
    ========================================================= */
 
 [class*="membersWrap_"] {
-  background: rgba(0, 0, 0, 0.80) !important;
+
+  background:
+    rgba(0, 0, 0, 0.80) !important;
 
   border-left:
     1px solid rgba(255, 255, 255, 0.45) !important;
 }
 
+
 [class*="members_"] {
-  background: transparent !important;
+
+  background:
+    transparent !important;
 }
 
 
@@ -303,7 +431,9 @@ body::after {
    ========================================================= */
 
 [class*="panels_"] {
-  background: rgba(0, 0, 0, 0.90) !important;
+
+  background:
+    rgba(0, 0, 0, 0.90) !important;
 
   border-top:
     1px solid rgba(255, 255, 255, 0.45) !important;
@@ -312,16 +442,24 @@ body::after {
 
 /* =========================================================
    DISCORD HOME
+   ROUNDED SQUARE
    ========================================================= */
 
 [class*="tutorialContainer_"] [class*="wrapper_"] {
-  border-radius: 12px !important;
-  overflow: hidden !important;
+
+  border-radius:
+    12px !important;
+
+  overflow:
+    hidden !important;
 }
+
 
 [class*="tutorialContainer_"] [class*="wrapper_"] img,
 [class*="tutorialContainer_"] [class*="wrapper_"] svg {
-  border-radius: 12px !important;
+
+  border-radius:
+    12px !important;
 }
 
 
@@ -331,11 +469,15 @@ body::after {
 
 [class*="modeSelectable_"]:hover,
 [class*="modeUnread_"]:hover {
-  background: rgba(227, 138, 120, 0.28) !important;
 
-  border-radius: 8px !important;
+  background:
+    rgba(227, 138, 120, 0.28) !important;
 
-  box-shadow: none !important;
+  border-radius:
+    8px !important;
+
+  box-shadow:
+    none !important;
 }
 
 
@@ -344,13 +486,18 @@ body::after {
    ========================================================= */
 
 [class*="modeSelected_"] {
-  background: rgba(227, 138, 120, 0.28) !important;
 
-  border-radius: 8px !important;
+  background:
+    rgba(227, 138, 120, 0.28) !important;
 
-  opacity: 1 !important;
+  border-radius:
+    8px !important;
 
-  box-shadow: none !important;
+  opacity:
+    1 !important;
+
+  box-shadow:
+    none !important;
 }
 
 
@@ -359,11 +506,15 @@ body::after {
    ========================================================= */
 
 [class*="modeSelected_"]::before {
-  background: #e38a78 !important;
 
-  border-radius: 4px !important;
+  background:
+    #e38a78 !important;
 
-  box-shadow: none !important;
+  border-radius:
+    4px !important;
+
+  box-shadow:
+    none !important;
 }
 
 
@@ -372,8 +523,12 @@ body::after {
    ========================================================= */
 
 [class*="modeSelected_"] [class*="name_"] {
-  color: #ffffff !important;
-  text-shadow: none !important;
+
+  color:
+    #ffffff !important;
+
+  text-shadow:
+    none !important;
 }
 
 
@@ -382,33 +537,49 @@ body::after {
    ========================================================= */
 
 [class*="selected_"] {
-  background: transparent !important;
-  box-shadow: none !important;
+
+  background:
+    transparent !important;
+
+  box-shadow:
+    none !important;
 }
+
 
 [class*="selected_"]:not([class*="modeSelected_"]) {
-  background: rgba(227, 138, 120, 0.28) !important;
 
-  border-radius: 8px !important;
+  background:
+    rgba(227, 138, 120, 0.28) !important;
 
-  box-shadow: none !important;
+  border-radius:
+    8px !important;
+
+  box-shadow:
+    none !important;
 }
 
+
 [class*="selected_"]:hover {
-  background: rgba(227, 138, 120, 0.40) !important;
 
-  border-radius: 8px !important;
+  background:
+    rgba(227, 138, 120, 0.40) !important;
 
-  box-shadow: none !important;
+  border-radius:
+    8px !important;
+
+  box-shadow:
+    none !important;
 }
 
 
 /* =========================================================
    NAMEPLATES
+   RED → WHITE
    ========================================================= */
 
 [class*="nameplated_"],
 [class*="nameplate_"] {
+
   background:
     linear-gradient(
       90deg,
@@ -420,17 +591,25 @@ body::after {
   border:
     1px solid #ffffff !important;
 
-  border-radius: 8px !important;
+  border-radius:
+    8px !important;
 
-  color: #111111 !important;
+  color:
+    #111111 !important;
 
-  box-shadow: none !important;
+  box-shadow:
+    none !important;
 }
+
 
 [class*="nameplated_"] *,
 [class*="nameplate_"] * {
-  color: #111111 !important;
-  text-shadow: none !important;
+
+  color:
+    #111111 !important;
+
+  text-shadow:
+    none !important;
 }
 
 
@@ -439,7 +618,9 @@ body::after {
    ========================================================= */
 
 [class*="message_"]:hover {
-  background: rgba(227, 138, 120, 0.10) !important;
+
+  background:
+    rgba(227, 138, 120, 0.10) !important;
 }
 
 
@@ -448,89 +629,200 @@ body::after {
    ========================================================= */
 
 [class*="channelTextArea_"] {
-  background: rgba(0, 0, 0, 0.72) !important;
+
+  background:
+    rgba(0, 0, 0, 0.72) !important;
 
   border:
     1px solid #ffffff !important;
 
-  border-radius: 10px !important;
+  border-radius:
+    10px !important;
 
-  box-shadow: none !important;
+  box-shadow:
+    none !important;
 }
 
+
 [class*="channelTextArea_"]:focus-within {
-  border-color: #ffffff !important;
-  box-shadow: none !important;
+
+  border-color:
+    #ffffff !important;
+
+  box-shadow:
+    none !important;
 }
 
 
 /* =========================================================
-   SEARCH BAR
+   FIND OR START A CONVERSATION
+   REMOVE BOX
    ========================================================= */
 
 [class*="searchBar_"] {
-  background: rgba(0, 0, 0, 0.72) !important;
 
-  border: none !important;
-  outline: none !important;
+  background:
+    rgba(0, 0, 0, 0.72) !important;
 
-  box-shadow: none !important;
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
 }
+
 
 [class*="searchBar_"]:focus-within {
-  border: none !important;
-  outline: none !important;
 
-  box-shadow: none !important;
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
 }
 
-[class*="search_"] [class*="container_"] {
-  border: none !important;
-  outline: none !important;
 
-  box-shadow: none !important;
+[class*="search_"] [class*="container_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
 }
 
 
 /* =========================================================
-   PROFILE
+   PROFILE / VIEW FULL PROFILE
+   REMOVE OUTLINES
    ========================================================= */
 
 [class*="userProfile_"],
 [class*="profilePanel_"] {
-  border: none !important;
-  outline: none !important;
 
-  box-shadow: none !important;
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
 }
 
-[class*="profile_"] [class*="container_"] {
-  border: none !important;
-  outline: none !important;
 
-  box-shadow: none !important;
+[class*="profile_"] [class*="container_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
 }
 
 
 /* =========================================================
-   INVISIBLE PROFILE / ACTION BUTTON OUTLINES
+   PROFILE ACTIONS
+   REMOVE FRIEND / BLOCK / TAGS / NAME ACTIONS
+   NO VISIBLE OUTLINE
    ========================================================= */
 
-[class*="actionButtons_"],
-[class*="actionButtonContainer_"],
-[class*="profileActions_"] {
-  gap: 75px !important;
+[class*="profileActions_"],
+[class*="profileActions_"] *,
+[class*="profilePanel_"] [class*="button_"],
+[class*="userProfile_"] [class*="button_"],
+[class*="userProfile_"] [class*="actionButton_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
 }
 
-[class*="actionButtons_"] button,
-[class*="actionButtonContainer_"] button,
-[class*="profileActions_"] button,
-[class*="profileButton_"],
+
+/* =========================================================
+   PROFILE TAGS / BADGES / ROLES
+   ========================================================= */
+
+[class*="profile_"] [class*="tag_"],
+[class*="profile_"] [class*="badge_"],
+[class*="profile_"] [class*="role_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   ACTUAL CLICKABLE UTILITY BUTTONS
+   FAINT WHITE ROUNDED OUTLINE
+   ========================================================= */
+
+[class*="iconButton_"],
+[class*="actionButton_"]:not([class*="profile_"]),
+[class*="addButton_"],
+[class*="attachButton_"],
+[class*="uploadButton_"],
+[class*="callButton_"],
+[class*="backButton_"],
+[class*="forwardButton_"],
 [class*="viewProfile_"] {
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  background: transparent !important;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.16) !important;
+
+  border-radius:
+    10px !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   GENERIC BUTTONS
+   FAINT OUTLINE
+   ========================================================= */
+
+button,
+[role="button"] {
+
+  border:
+    1px solid rgba(255, 255, 255, 0.16) !important;
+
+  border-radius:
+    10px !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
 }
 
 
@@ -538,14 +830,55 @@ body::after {
    BUTTON HOVER
    ========================================================= */
 
-[class*="actionButtons_"] button:hover,
-[class*="actionButtonContainer_"] button:hover,
-[class*="profileActions_"] button:hover,
-[class*="profileButton_"]:hover,
-[class*="viewProfile_"]:hover {
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
+button:hover,
+[role="button"]:hover,
+[class*="iconButton_"]:hover,
+[class*="addButton_"]:hover,
+[class*="attachButton_"]:hover,
+[class*="uploadButton_"]:hover,
+[class*="callButton_"]:hover,
+[class*="backButton_"]:hover,
+[class*="forwardButton_"]:hover {
+
+  border-color:
+    rgba(255, 255, 255, 0.30) !important;
+
+  border-radius:
+    10px !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   BUTTON ACTIVE
+   ========================================================= */
+
+button:active,
+[role="button"]:active {
+
+  border-color:
+    rgba(227, 138, 120, 0.45) !important;
+
+  border-radius:
+    10px !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   PROFILE ACTION CONTAINER SPACING
+   ========================================================= */
+
+[class*="actionButtons_"],
+[class*="actionButtonContainer_"],
+[class*="profileActions_"] {
+
+  gap:
+    var(--cv-button-gap) !important;
 }
 
 
@@ -555,7 +888,9 @@ body::after {
 
 [class*="peopleColumn_"],
 [class*="nowPlayingColumn_"] {
-  border: none !important;
+
+  border:
+    none !important;
 }
 
 
@@ -565,16 +900,21 @@ body::after {
 
 [class*="menu_"],
 [class*="popout_"] {
-  background: rgba(5, 5, 5, 0.98) !important;
+
+  background:
+    rgba(5, 5, 5, 0.98) !important;
 
   border:
     1px solid #ffffff !important;
 
-  border-radius: 10px !important;
+  border-radius:
+    10px !important;
 
-  box-shadow: none !important;
+  box-shadow:
+    none !important;
 
-  backdrop-filter: blur(14px);
+  backdrop-filter:
+    blur(14px);
 }
 
 
@@ -583,16 +923,21 @@ body::after {
    ========================================================= */
 
 [class*="modal_"] {
-  background: rgba(5, 5, 5, 0.98) !important;
+
+  background:
+    rgba(5, 5, 5, 0.98) !important;
 
   border:
     1px solid #ffffff !important;
 
-  border-radius: 12px !important;
+  border-radius:
+    12px !important;
 
-  box-shadow: none !important;
+  box-shadow:
+    none !important;
 
-  backdrop-filter: blur(16px);
+  backdrop-filter:
+    blur(16px);
 }
 
 
@@ -601,25 +946,42 @@ body::after {
    ========================================================= */
 
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+
+  width:
+    7px;
+
+  height:
+    7px;
 }
+
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.50);
+
+  background:
+    rgba(0, 0, 0, 0.50);
 }
+
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(227, 138, 120, 0.55);
 
-  border-radius: 10px;
+  background:
+    rgba(227, 138, 120, 0.55);
 
-  box-shadow: none !important;
+  border-radius:
+    10px;
+
+  box-shadow:
+    none !important;
 }
 
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #e38a78;
-  box-shadow: none !important;
+
+  background:
+    #e38a78;
+
+  box-shadow:
+    none !important;
 }
 
 
@@ -628,14 +990,18 @@ body::after {
    ========================================================= */
 
 [class*="tooltip_"] {
-  background: #050505 !important;
+
+  background:
+    #050505 !important;
 
   border:
     1px solid #ffffff !important;
 
-  border-radius: 8px !important;
+  border-radius:
+    8px !important;
 
-  box-shadow: none !important;
+  box-shadow:
+    none !important;
 }
 
 
@@ -644,6 +1010,7 @@ body::after {
    ========================================================= */
 
 [class*="divider_"] {
+
   border-color:
     rgba(255, 255, 255, 0.55) !important;
 }
@@ -654,40 +1021,58 @@ body::after {
    ========================================================= */
 
 *:focus-visible {
+
   outline:
     1px solid #ffffff !important;
 
-  outline-offset: 2px;
+  outline-offset:
+    2px;
 
-  box-shadow: none !important;
+  box-shadow:
+    none !important;
 }
 
 
 /* =========================================================
-   CLEARVISION 7.0.1 COVER
-   PURE BLACK / 70PX RIGHT
+   CLEARVISION 7.0.1 / CRYING FACE COVER
+   PURE BLACK
+   74PX RIGHT
    ========================================================= */
 
 #app-mount::after {
-  content: "";
 
-  position: fixed;
+  content:
+    "";
 
-  top: 0 !important;
-  left: 0 !important;
+  position:
+    fixed;
 
-  width: var(--cv-cover-width);
-  height: var(--cv-cover-height);
+  top:
+    0 !important;
 
-  background: #000000 !important;
+  left:
+    0 !important;
 
-  opacity: 1 !important;
+  width:
+    var(--cv-cover-width);
 
-  transform: translateX(70px);
+  height:
+    var(--cv-cover-height);
 
-  z-index: 999999 !important;
+  background:
+    #000000 !important;
 
-  pointer-events: none !important;
+  opacity:
+    1 !important;
+
+  transform:
+    translateX(var(--cv-cover-x));
+
+  z-index:
+    999999 !important;
+
+  pointer-events:
+    none !important;
 }
 
 
