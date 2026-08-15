@@ -1,203 +1,790 @@
 /**
- * @name ClearVision V7 - Cinematic Video
+ * @name ClearVision V7 - Gothic Monochrome
  * @author ClearVision Team + q-randomfemboy-p
  * @version 7.0.1
- * @description ClearVision V7 with a GitHub-hosted cinematic video background.
+ * @description ClearVision V7 with a dark gothic black-and-white background.
  * @source https://github.com/ClearVision/ClearVision-v7
  * @website https://clearvision.github.io
+ * @invite dHaSxn3
  */
 
-/* IMPORT CSS */
+/* =========================================================
+   CLEARVISION IMPORTS
+   ========================================================= */
+
 @import url("https://clearvision.github.io/ClearVision-v7/main.css");
 @import url("https://clearvision.github.io/ClearVision-v7/betterdiscord.css");
 
-/* SETTINGS */
+
+/* =========================================================
+   GOTHIC MONOCHROME SETTINGS
+   ========================================================= */
+
 :root {
-  /* ACCENT COLORS */
-  --main-color: #2780e6;
-  --hover-color: #1e63b3;
-  --success-color: #43b581;
-  --danger-color: #982929;
 
-  /* STATUS COLORS */
-  --online-color: #43b581;
-  --idle-color: #faa61a;
-  --dnd-color: #982929;
-  --streaming-color: #593695;
-  --offline-color: #808080;
+  /* -------------------------------------------------------
+     ACCENT COLORS
+     ------------------------------------------------------- */
 
-  /* APP BACKGROUND */
-  --background-shading-percent: 35%;
-  --background-image: none;
-  --background-position: center;
+  --main-color: #d8d8d8;
+  --hover-color: #ffffff;
+
+  --success-color: #bdbdbd;
+  --danger-color: #777777;
+
+
+  /* -------------------------------------------------------
+     STATUS COLORS
+     ------------------------------------------------------- */
+
+  --online-color: #d0d0d0;
+  --idle-color: #a0a0a0;
+  --dnd-color: #707070;
+  --streaming-color: #b0b0b0;
+  --offline-color: #555555;
+
+
+  /* -------------------------------------------------------
+     BACKGROUND IMAGE
+     ------------------------------------------------------- */
+
+  --background-image: url(
+    "https://raw.githubusercontent.com/q-randomfemboy-p/Image-cycler-Discord-TP/main/b9a789aa5a073e660b58cf2a74bbf10e.jpg"
+  );
+
+  --background-position: center center;
   --background-size: cover;
   --background-attachment: fixed;
-  --background-filter: saturate(calc(var(--saturation-factor, 1) * 1));
 
-  /* USER POPOUT BACKGROUND */
-  --user-popout-image: none;
-  --user-popout-position: center;
-  --user-popout-size: cover;
-  --user-popout-attachment: fixed;
-  --user-popout-filter: none;
 
-  /* USER MODAL BACKGROUND */
-  --user-modal-image: none;
-  --user-modal-position: center;
-  --user-modal-size: cover;
-  --user-modal-attachment: fixed;
-  --user-modal-filter: none;
+  /* -------------------------------------------------------
+     IMAGE EFFECTS
+     ------------------------------------------------------- */
 
-  /* HOME ICON */
-  --home-icon: url(https://clearvision.github.io/icons/discord.svg);
+  --background-blur: 1px;
+
+  --background-brightness: 0.62;
+
+  --background-contrast: 1.35;
+
+  --background-saturation: 0;
+
+
+  /* -------------------------------------------------------
+     GOTHIC DARKNESS
+     ------------------------------------------------------- */
+
+  --gothic-darkness: 0.64;
+
+  --gothic-overlay: 0.34;
+
+
+  /* -------------------------------------------------------
+     SILVER HIGHLIGHT
+     ------------------------------------------------------- */
+
+  --gothic-glow: rgba(255,255,255,0.08);
+
+
+  /* -------------------------------------------------------
+     DISCORD UI SHADING
+     ------------------------------------------------------- */
+
+  --background-shading-percent: 55%;
+
+  --card-shading: rgba(0,0,0,0.55);
+
+  --popout-shading: rgba(0,0,0,0.82);
+
+  --modal-shading: rgba(0,0,0,0.88);
+
+  --input-shading: rgba(255,255,255,0.045);
+
+
+  /* -------------------------------------------------------
+     TEXT
+     ------------------------------------------------------- */
+
+  --normal-text: #eeeeee;
+
+  --muted-text: #909090;
+
+
+  /* -------------------------------------------------------
+     HOME ICON
+     ------------------------------------------------------- */
+
+  --home-icon: url(
+    "https://clearvision.github.io/icons/discord.svg"
+  );
+
   --home-size: cover;
 
-  /* FONTS */
-  --main-font: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --code-font: Consolas, "gg mono", "Liberation Mono", Menlo, Courier, monospace;
 
-  /* CHANNEL COLORS */
-  --channel-normal: var(--interactive-text-default);
-  --channel-muted: var(--interactive-muted);
-  --channel-hover: var(--interactive-text-hover);
-  --channel-selected: var(--interactive-text-active);
-  --channel-selected-bg: var(--main-color);
-  --channel-unread: var(--main-color);
-  --channel-unread-hover: var(--hover-color);
+  /* -------------------------------------------------------
+     FONTS
+     ------------------------------------------------------- */
 
-  /* ACCESSIBILITY */
-  --focus-color: var(--main-color);
+  --main-font:
+    "gg sans",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  --code-font:
+    Consolas,
+    "gg mono",
+    "Liberation Mono",
+    Menlo,
+    Courier,
+    monospace;
+
+
+  /* -------------------------------------------------------
+     CHANNEL COLORS
+     ------------------------------------------------------- */
+
+  --channel-normal:
+    var(--interactive-text-default);
+
+  --channel-muted:
+    var(--interactive-muted);
+
+  --channel-hover:
+    #ffffff;
+
+  --channel-selected:
+    #ffffff;
+
+  --channel-selected-bg:
+    rgba(255,255,255,0.12);
+
+  --channel-unread:
+    #ffffff;
+
+  --channel-unread-hover:
+    #d0d0d0;
+
+
+  /* -------------------------------------------------------
+     ACCESSIBILITY
+     ------------------------------------------------------- */
+
+  --focus-color:
+    #ffffff;
 }
 
-/* LIGHT THEME */
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
 :is(.theme-light, .theme-dark .theme-light) {
-  --background-shading: rgba(252, 252, 252, 0.25);
-  --card-shading: rgba(252, 252, 252, 0.25);
-  --popout-shading: rgba(252, 252, 252, 0.65);
-  --modal-shading: rgba(252, 252, 252, 0.45);
-  --input-shading: rgba(0, 0, 0, 0.25);
 
-  --normal-text: #36363c;
-  --muted-text: #75757e;
+  --background-shading:
+    rgba(255,255,255,0.20);
+
+  --card-shading:
+    rgba(255,255,255,0.18);
+
+  --popout-shading:
+    rgba(255,255,255,0.75);
+
+  --modal-shading:
+    rgba(255,255,255,0.65);
+
+  --input-shading:
+    rgba(0,0,0,0.20);
+
+  --normal-text:
+    #222222;
+
+  --muted-text:
+    #666666;
 }
 
-/* ASH THEME */
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
 :is(.theme-dark, .theme-light .theme-dark) {
-  --background-shading: rgba(0, 0, 0, 0.35);
-  --card-shading: rgba(0, 0, 0, 0.18);
-  --popout-shading: rgba(0, 0, 0, 0.55);
-  --modal-shading: rgba(0, 0, 0, 0.35);
-  --input-shading: rgba(255, 255, 255, 0.05);
 
-  --normal-text: #d8d8db;
-  --muted-text: #aeaeb4;
+  --background-shading:
+    rgba(0,0,0,0.38);
+
+  --card-shading:
+    rgba(0,0,0,0.28);
+
+  --popout-shading:
+    rgba(0,0,0,0.70);
+
+  --modal-shading:
+    rgba(0,0,0,0.65);
+
+  --input-shading:
+    rgba(255,255,255,0.045);
+
+  --normal-text:
+    #eeeeee;
+
+  --muted-text:
+    #999999;
 }
 
-/* DARK THEME */
+
+/* =========================================================
+   DARKER THEME
+   ========================================================= */
+
 :is(.theme-darker, .theme-light .theme-darker) {
-  --background-shading: rgba(0, 0, 0, 0.5);
-  --card-shading: rgba(0, 0, 0, 0.25);
-  --popout-shading: rgba(0, 0, 0, 0.65);
-  --modal-shading: rgba(0, 0, 0, 0.45);
-  --input-shading: rgba(255, 255, 255, 0.05);
 
-  --normal-text: #fbfbfb;
-  --muted-text: #94949c;
+  --background-shading:
+    rgba(0,0,0,0.50);
+
+  --card-shading:
+    rgba(0,0,0,0.35);
+
+  --popout-shading:
+    rgba(0,0,0,0.78);
+
+  --modal-shading:
+    rgba(0,0,0,0.72);
+
+  --input-shading:
+    rgba(255,255,255,0.045);
+
+  --normal-text:
+    #f2f2f2;
+
+  --muted-text:
+    #8f8f8f;
 }
 
-/* ONYX THEME */
+
+/* =========================================================
+   MIDNIGHT / ONYX
+   ========================================================= */
+
 :is(.theme-midnight, .theme-light .theme-midnight) {
-  --background-shading: rgba(0, 0, 0, 0.7);
-  --card-shading: rgba(0, 0, 0, 0.35);
-  --popout-shading: rgba(0, 0, 0, 0.75);
-  --modal-shading: rgba(0, 0, 0, 0.55);
-  --input-shading: rgba(255, 255, 255, 0.05);
 
-  --normal-text: #dcdcde;
-  --muted-text: #86868e;
+  --background-shading:
+    rgba(0,0,0,0.70);
+
+  --card-shading:
+    rgba(0,0,0,0.45);
+
+  --popout-shading:
+    rgba(0,0,0,0.86);
+
+  --modal-shading:
+    rgba(0,0,0,0.82);
+
+  --input-shading:
+    rgba(255,255,255,0.04);
+
+  --normal-text:
+    #dddddd;
+
+  --muted-text:
+    #808080;
 }
 
-/* ========================================= */
-/* CINEMATIC VIDEO BACKGROUND                */
-/* ========================================= */
 
-/* Make Discord's background layers transparent */
-html,
-body,
+/* =========================================================
+   BASE TRANSPARENCY
+   ========================================================= */
+
+html {
+  background: #050505 !important;
+}
+
+body {
+  background: transparent !important;
+}
+
 #app-mount {
   background: transparent !important;
 }
 
+
+/* =========================================================
+   MAIN GOTHIC BACKGROUND
+   ========================================================= */
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+
+  width: calc(100vw + 40px);
+  height: calc(100vh + 40px);
+
+  pointer-events: none;
+
+  z-index: -100;
+
+  background-image:
+    var(--background-image);
+
+  background-position:
+    var(--background-position);
+
+  background-size:
+    var(--background-size);
+
+  background-repeat:
+    no-repeat;
+
+  background-attachment:
+    fixed;
+
+  filter:
+
+    grayscale(1)
+
+    blur(var(--background-blur))
+
+    brightness(var(--background-brightness))
+
+    contrast(var(--background-contrast))
+
+    saturate(var(--background-saturation));
+
+  transform:
+    scale(1.02);
+}
+
+
+/* =========================================================
+   BLACK CINEMATIC OVERLAY
+   ========================================================= */
+
+body::after {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: -99;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.82) 0%,
+      rgba(0,0,0,0.54) 35%,
+      rgba(0,0,0,0.38) 55%,
+      rgba(0,0,0,0.72) 100%
+    );
+}
+
+
+/* =========================================================
+   GOTHIC VIGNETTE
+   ========================================================= */
+
+#app-mount::before {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: -98;
+
+  background:
+
+    radial-gradient(
+      ellipse at center,
+      transparent 20%,
+      rgba(0,0,0,0.25) 55%,
+      rgba(0,0,0,0.85) 100%
+    );
+}
+
+
+/* =========================================================
+   SUBTLE WHITE LIGHT
+   ========================================================= */
+
+#app-mount::after {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: -97;
+
+  background:
+
+    radial-gradient(
+      circle at 18% 18%,
+      var(--gothic-glow),
+      transparent 34%
+    ),
+
+    radial-gradient(
+      circle at 82% 82%,
+      rgba(255,255,255,0.035),
+      transparent 40%
+    );
+}
+
+
+/* =========================================================
+   CLEARVISION BACKGROUND LAYER
+   ========================================================= */
+
 #app-mount .bg__960e4 {
-  background: transparent !important;
+
+  background:
+    transparent !important;
 }
 
-/* Video container */
-#clearvision-video-background {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
 
-  width: 100vw !important;
-  height: 100vh !important;
+/* =========================================================
+   SERVER / CHANNEL SIDEBAR
+   ========================================================= */
 
-  overflow: hidden !important;
+[class*="guilds_"] {
 
-  pointer-events: none !important;
-
-  z-index: -9999 !important;
+  background:
+    rgba(0,0,0,0.52) !important;
 }
 
-/* Video */
-#clearvision-video-background video {
-  position: absolute !important;
 
-  top: 0 !important;
-  left: 0 !important;
+[class*="sidebar_"] {
 
-  width: 100% !important;
-  height: 100% !important;
-
-  object-fit: cover !important;
-  object-position: center !important;
-
-  opacity: 0.75 !important;
-
-  pointer-events: none !important;
+  background:
+    rgba(0,0,0,0.36) !important;
 }
 
-/* Dark cinematic overlay */
-#clearvision-video-background .video-overlay {
-  position: absolute !important;
 
-  top: 0 !important;
-  left: 0 !important;
+/* =========================================================
+   CHAT
+   ========================================================= */
 
-  width: 100% !important;
-  height: 100% !important;
+[class*="chat_"] {
 
-  background: rgba(0, 0, 0, 0.35) !important;
-
-  pointer-events: none !important;
+  background:
+    rgba(0,0,0,0.12) !important;
 }
 
-/* Keep Discord interface above background */
-#app-mount > * {
-  position: relative;
+
+[class*="chatContent_"] {
+
+  background:
+    transparent !important;
 }
 
-/* Make major Discord backgrounds transparent */
-[class*="content_"],
-[class*="chat_"],
-[class*="chatContent_"],
-[class*="container_"],
-[class*="sidebar_"],
-[class*="membersWrap_"],
-[class*="members_"],
+
+/* =========================================================
+   MEMBER LIST
+   ========================================================= */
+
+[class*="membersWrap_"] {
+
+  background:
+    rgba(0,0,0,0.34) !important;
+}
+
+
+[class*="members_"] {
+
+  background:
+    transparent !important;
+}
+
+
+/* =========================================================
+   USER PANEL
+   ========================================================= */
+
 [class*="panels_"] {
-  background-color: transparent;
+
+  background:
+    rgba(0,0,0,0.45) !important;
 }
 
-/* ========================================= */
+
+/* =========================================================
+   CHANNEL HOVER
+   ========================================================= */
+
+[class*="modeSelectable_"]:hover,
+[class*="modeUnread_"]:hover {
+
+  background:
+    rgba(255,255,255,0.055) !important;
+}
+
+
+/* =========================================================
+   SELECTED CHANNEL
+   ========================================================= */
+
+[class*="modeSelected_"] {
+
+  background:
+    rgba(255,255,255,0.105) !important;
+}
+
+
+/* =========================================================
+   SELECTED CHANNEL INDICATOR
+   ========================================================= */
+
+[class*="modeSelected_"]::before {
+
+  background:
+    #ffffff !important;
+
+  box-shadow:
+    0 0 8px rgba(255,255,255,0.55);
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+[class*="name_"] {
+
+  transition:
+    color 0.15s ease;
+}
+
+
+[class*="modeSelected_"] [class*="name_"] {
+
+  color:
+    #ffffff !important;
+}
+
+
+/* =========================================================
+   MESSAGE HOVER
+   ========================================================= */
+
+[class*="message_"]:hover {
+
+  background:
+    rgba(255,255,255,0.025) !important;
+}
+
+
+/* =========================================================
+   INPUT BOX
+   ========================================================= */
+
+[class*="channelTextArea_"] {
+
+  background:
+    rgba(0,0,0,0.48) !important;
+
+  border:
+    1px solid rgba(255,255,255,0.07);
+
+  border-radius:
+    8px;
+}
+
+
+/* =========================================================
+   TEXT INPUT
+   ========================================================= */
+
+[class*="textArea_"] {
+
+  background:
+    transparent !important;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+[class*="searchBar_"] {
+
+  background:
+    rgba(0,0,0,0.48) !important;
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+}
+
+
+/* =========================================================
+   POPUPS
+   ========================================================= */
+
+[class*="menu_"],
+[class*="popout_"] {
+
+  background:
+    rgba(7,7,7,0.94) !important;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.65);
+
+  backdrop-filter:
+    blur(14px);
+}
+
+
+/* =========================================================
+   MODALS
+   ========================================================= */
+
+[class*="modal_"] {
+
+  background:
+    rgba(7,7,7,0.94) !important;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.75);
+
+  backdrop-filter:
+    blur(18px);
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button:hover {
+
+  filter:
+    brightness(1.18);
+}
+
+
+/* =========================================================
+   WHITE ACCENT GLOW
+   ========================================================= */
+
+[class*="selected_"] {
+
+  box-shadow:
+    inset 2px 0 0 #ffffff;
+}
+
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+::-webkit-scrollbar {
+
+  width:
+    7px;
+
+  height:
+    7px;
+}
+
+
+::-webkit-scrollbar-track {
+
+  background:
+    rgba(0,0,0,0.30);
+}
+
+
+::-webkit-scrollbar-thumb {
+
+  background:
+    #555555;
+
+  border-radius:
+    10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+  background:
+    #888888;
+}
+
+
+/* =========================================================
+   TOOLTIPS
+   ========================================================= */
+
+[class*="tooltip_"] {
+
+  background:
+    #080808 !important;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.65);
+}
+
+
+/* =========================================================
+   DIVIDERS
+   ========================================================= */
+
+[class*="divider_"] {
+
+  border-color:
+    rgba(255,255,255,0.08) !important;
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+*:focus-visible {
+
+  outline:
+    1px solid #ffffff !important;
+
+  outline-offset:
+    2px;
+}
+
+
+/* =========================================================
+   GOTHIC FINAL SHADOW
+   ========================================================= */
+
+#app-mount {
+
+  text-shadow:
+    0 0 1px rgba(255,255,255,0.08);
+}
 /* END VIDEO BACKGROUND                      */
 /* ========================================= */
