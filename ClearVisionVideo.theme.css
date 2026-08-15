@@ -652,7 +652,7 @@ body::after {
 
 
 /* =========================================================
-   NAME / USERNAME / TAG BUBBLES REMOVED
+   NAME / USERNAME / TAG BUBBLES
    ========================================================= */
 
 [class*="nameTag_"],
@@ -684,7 +684,7 @@ body::after {
 
 
 /* =========================================================
-   SERVER TAGS / USER TAGS
+   SERVER / GUILD TAGS
    ========================================================= */
 
 [class*="tag_"],
@@ -693,7 +693,8 @@ body::after {
 [class*="guildTag_"],
 [class*="clanTag_"],
 [class*="serverTag_"],
-[data-list-item-id*="tag"] {
+[class*="clanTagChiplet_"],
+[class*="chipletContainerInner_"] {
 
   background:
     transparent !important;
@@ -739,19 +740,164 @@ body::after {
 
 
 /* =========================================================
-   MESSAGE HOVER
+   CURRENT DISCORD BADGE CONTAINERS
    ========================================================= */
 
-[class*="message_"]:hover {
+div[class^="container__"][aria-label^="User Badges"],
+span[class^="chipletContainerInner__"] {
 
   background:
-    rgba(227, 138, 120, 0.10) !important;
+    transparent !important;
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  border-radius:
+    0 !important;
+
+  box-shadow:
+    none !important;
 }
 
 
 /* =========================================================
-   ATTACHMENTS / IMAGES / GIFS
-   NO BORDERS OR BUBBLES
+   MUTUAL SERVERS
+   ========================================================= */
+
+/* Current empty-state graphics */
+[class^="emptyIconGuilds__"],
+[class^="emptyIconFriends__"] {
+
+  background:
+    transparent !important;
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  border-radius:
+    0 !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* Mutual guild containers */
+[class*="mutualGuilds_"],
+[class*="mutualGuild_"],
+[class*="moreMutualGuilds_"],
+[class*="moreMutualGuildsBtn_"] {
+
+  background:
+    transparent !important;
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  border-radius:
+    0 !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* Mutual server rows/items */
+[class*="mutual"] [class*="guild"],
+[class*="mutual"] [class*="server"],
+[class*="mutualGuilds_"] *,
+[class*="mutualGuild_"] * {
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   PROFILE / MUTUAL FRIENDS / MUTUAL SERVERS SECTIONS
+   ========================================================= */
+
+[class*="mutualFriends_"],
+[class*="mutualFriend_"],
+[class*="mutualServers_"],
+[class*="mutualServer_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   PROFILE EFFECTS
+   ========================================================= */
+
+[class*="profileEffects_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   AVATAR / PROFILE IMAGE DECORATIONS
+   ========================================================= */
+
+img[class*="avatarDecoration_"],
+svg[class*="avatarDecoration_"],
+[class*="avatarDecoration_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   ROLE ICONS
+   ========================================================= */
+
+img[class*="roleIcon__"],
+[class*="roleIcon__"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   ATTACHMENTS / IMAGES / GIFS / VIDEOS
    ========================================================= */
 
 [class*="attachment_"],
@@ -835,11 +981,13 @@ body::after {
 
 
 /* =========================================================
-   IMAGE / GIF HOVER
+   RETRY / FAILED CONTENT
    ========================================================= */
 
-[class*="imageWrapper_"]:hover,
-[class*="mediaWrapper_"]:hover {
+/* Accessible Retry buttons */
+button[aria-label="Retry"],
+[role="button"][aria-label="Retry"],
+[aria-label^="Retry"] {
 
   border:
     none !important;
@@ -849,6 +997,52 @@ body::after {
 
   box-shadow:
     none !important;
+
+  background:
+    transparent !important;
+
+  border-radius:
+    0 !important;
+}
+
+
+/* Retry containers / generated class names */
+[class*="retry_"],
+[class*="retryButton_"],
+[class*="retryContainer_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+
+  border-radius:
+    0 !important;
+}
+
+
+/* Failed media/content */
+[class*="failed_"],
+[class*="error_"] [class*="retry_"],
+[class*="loadingOverlay_"] {
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   MESSAGE HOVER
+   ========================================================= */
+
+[class*="message_"]:hover {
+
+  background:
+    rgba(227, 138, 120, 0.10) !important;
 }
 
 
@@ -1047,7 +1241,7 @@ button,
 
 
 /* =========================================================
-   KEEP NAME / TAG / BADGE ELEMENTS FLAT
+   KEEP NON-BUTTON CONTENT FLAT
    ========================================================= */
 
 [class*="nameTag_"],
@@ -1058,12 +1252,18 @@ button,
 [class*="guildTag_"],
 [class*="clanTag_"],
 [class*="serverTag_"],
+[class*="clanTagChiplet_"],
+[class*="chipletContainerInner_"],
 [class*="role_"],
 [class*="roles_"],
 [class*="badge_"],
 [class*="profileBadge_"],
 [class*="tag_"],
-[class*="tags_"] {
+[class*="tags_"],
+[class*="mutualGuilds_"],
+[class*="mutualGuild_"],
+[class*="mutualFriends_"],
+[class*="mutualFriend_"] {
 
   border:
     none !important;
