@@ -1,8 +1,8 @@
 /**
- * @name ClearVision V7 - Gothic Monochrome Red
+ * @name ClearVision V7 - Gothic Wet Red
  * @author ClearVision Team + q-randomfemboy-p
- * @version 7.0.3
- * @description High-contrast gothic black-and-white ClearVision theme with opaque red selections.
+ * @version 7.0.4
+ * @description Gothic monochrome ClearVision theme with wet gray-red accents and opaque selections.
  * @source https://github.com/ClearVision/ClearVision-v7
  * @website https://clearvision.github.io
  */
@@ -16,27 +16,31 @@
 
 
 /* =========================================================
-   MAIN SETTINGS
+   ROOT SETTINGS
    ========================================================= */
 
 :root {
 
-  /* RED ACCENT */
+  /* -------------------------------------------------------
+     WET GRAY-RED
+     ------------------------------------------------------- */
 
-  --main-color: #8f2020;
-  --hover-color: #a52525;
+  --main-color: #713c3c;
+  --hover-color: #855050;
 
   --success-color: #b5b5b5;
-  --danger-color: #8f2020;
+  --danger-color: #713c3c;
 
-  --online-color: #d0d0d0;
-  --idle-color: #a0a0a0;
-  --dnd-color: #8f2020;
-  --streaming-color: #b0b0b0;
+  --online-color: #c8c8c8;
+  --idle-color: #999999;
+  --dnd-color: #713c3c;
+  --streaming-color: #999999;
   --offline-color: #555555;
 
 
-  /* BACKGROUND */
+  /* -------------------------------------------------------
+     BACKGROUND
+     ------------------------------------------------------- */
 
   --background-image: url(
     "https://raw.githubusercontent.com/q-randomfemboy-p/Image-cycler-Discord-TP/main/b9a789aa5a073e660b58cf2a74bbf10e.jpg"
@@ -47,49 +51,62 @@
   --background-attachment: fixed;
 
   --background-blur: 1px;
-  --background-brightness: 0.52;
-  --background-contrast: 1.35;
+  --background-brightness: 0.48;
+  --background-contrast: 1.42;
   --background-saturation: 0;
 
 
-  /* SHADING */
+  /* -------------------------------------------------------
+     SHADING
+     ------------------------------------------------------- */
 
-  --background-shading-percent: 65%;
+  --background-shading-percent: 70%;
 
-  --card-shading: rgba(0, 0, 0, 0.72);
-  --popout-shading: rgba(0, 0, 0, 0.94);
-  --modal-shading: rgba(0, 0, 0, 0.96);
-  --input-shading: rgba(255, 255, 255, 0.06);
+  --card-shading: rgba(0, 0, 0, 0.76);
+  --popout-shading: rgba(0, 0, 0, 0.95);
+  --modal-shading: rgba(0, 0, 0, 0.97);
+  --input-shading: rgba(255, 255, 255, 0.055);
 
 
-  /* TEXT */
+  /* -------------------------------------------------------
+     TEXT
+     ------------------------------------------------------- */
 
   --normal-text: #ffffff;
-  --muted-text: #a8a8a8;
+  --muted-text: #a4a4a4;
 
 
-  /* RED OUTLINES */
+  /* -------------------------------------------------------
+     OUTLINES
+     ------------------------------------------------------- */
 
-  --gothic-red: rgba(150, 35, 35, 0.72);
-  --gothic-red-soft: rgba(150, 35, 35, 0.42);
-  --gothic-red-hover: rgba(175, 45, 45, 0.82);
-
-
-  /* OPAQUE SELECTED RED */
-
-  --selected-red: #8f2020;
-  --selected-red-light: #b52a2a;
+  --gothic-red: #713c3c;
+  --gothic-red-soft: #553434;
+  --gothic-red-hover: #855050;
 
 
-  /* HOME */
+  /* -------------------------------------------------------
+     SELECTED STATE
+     ------------------------------------------------------- */
+
+  --selected-red: #713c3c;
+  --selected-red-hover: #855050;
+
+
+  /* -------------------------------------------------------
+     HOME ICON
+     ------------------------------------------------------- */
 
   --home-icon:
     url("https://clearvision.github.io/icons/discord.svg");
 
-  --home-size: cover;
+  --home-size:
+    70%;
 
 
-  /* FONTS */
+  /* -------------------------------------------------------
+     FONTS
+     ------------------------------------------------------- */
 
   --main-font:
     "gg sans",
@@ -107,7 +124,9 @@
     monospace;
 
 
-  /* CHANNEL COLORS */
+  /* -------------------------------------------------------
+     CHANNELS
+     ------------------------------------------------------- */
 
   --channel-normal:
     var(--interactive-text-default);
@@ -122,7 +141,7 @@
     #ffffff;
 
   --channel-selected-bg:
-    var(--selected-red);
+    #713c3c;
 
   --channel-unread:
     #ffffff;
@@ -131,39 +150,12 @@
     #ffffff;
 
 
-  /* ACCESSIBILITY */
+  /* -------------------------------------------------------
+     FOCUS
+     ------------------------------------------------------- */
 
   --focus-color:
-    var(--selected-red-light);
-}
-
-
-/* =========================================================
-   LIGHT THEME
-   ========================================================= */
-
-:is(.theme-light, .theme-dark .theme-light) {
-
-  --background-shading:
-    rgba(255, 255, 255, 0.20);
-
-  --card-shading:
-    rgba(255, 255, 255, 0.18);
-
-  --popout-shading:
-    rgba(255, 255, 255, 0.75);
-
-  --modal-shading:
-    rgba(255, 255, 255, 0.65);
-
-  --input-shading:
-    rgba(0, 0, 0, 0.20);
-
-  --normal-text:
-    #111111;
-
-  --muted-text:
-    #555555;
+    #855050;
 }
 
 
@@ -174,16 +166,16 @@
 :is(.theme-dark, .theme-light .theme-dark) {
 
   --background-shading:
-    rgba(0, 0, 0, 0.48);
+    rgba(0, 0, 0, 0.52);
 
   --card-shading:
-    rgba(0, 0, 0, 0.38);
+    rgba(0, 0, 0, 0.42);
 
   --popout-shading:
-    rgba(0, 0, 0, 0.88);
+    rgba(0, 0, 0, 0.90);
 
   --modal-shading:
-    rgba(0, 0, 0, 0.92);
+    rgba(0, 0, 0, 0.94);
 
   --input-shading:
     rgba(255, 255, 255, 0.05);
@@ -192,7 +184,7 @@
     #ffffff;
 
   --muted-text:
-    #a8a8a8;
+    #a4a4a4;
 }
 
 
@@ -203,16 +195,16 @@
 :is(.theme-darker, .theme-light .theme-darker) {
 
   --background-shading:
-    rgba(0, 0, 0, 0.58);
+    rgba(0, 0, 0, 0.64);
 
   --card-shading:
-    rgba(0, 0, 0, 0.48);
+    rgba(0, 0, 0, 0.52);
 
   --popout-shading:
-    rgba(0, 0, 0, 0.92);
+    rgba(0, 0, 0, 0.94);
 
   --modal-shading:
-    rgba(0, 0, 0, 0.95);
+    rgba(0, 0, 0, 0.97);
 
   --input-shading:
     rgba(255, 255, 255, 0.05);
@@ -221,27 +213,27 @@
     #ffffff;
 
   --muted-text:
-    #a0a0a0;
+    #999999;
 }
 
 
 /* =========================================================
-   MIDNIGHT / ONYX
+   MIDNIGHT
    ========================================================= */
 
 :is(.theme-midnight, .theme-light .theme-midnight) {
 
   --background-shading:
-    rgba(0, 0, 0, 0.78);
+    rgba(0, 0, 0, 0.82);
 
   --card-shading:
-    rgba(0, 0, 0, 0.58);
+    rgba(0, 0, 0, 0.62);
 
   --popout-shading:
-    rgba(0, 0, 0, 0.95);
+    rgba(0, 0, 0, 0.96);
 
   --modal-shading:
-    rgba(0, 0, 0, 0.97);
+    rgba(0, 0, 0, 0.98);
 
   --input-shading:
     rgba(255, 255, 255, 0.04);
@@ -250,7 +242,7 @@
     #ffffff;
 
   --muted-text:
-    #969696;
+    #929292;
 }
 
 
@@ -332,16 +324,16 @@ body::after {
   background:
     linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.86) 0%,
-      rgba(0, 0, 0, 0.62) 35%,
-      rgba(0, 0, 0, 0.46) 60%,
-      rgba(0, 0, 0, 0.82) 100%
+      rgba(0, 0, 0, 0.90) 0%,
+      rgba(0, 0, 0, 0.68) 34%,
+      rgba(0, 0, 0, 0.48) 62%,
+      rgba(0, 0, 0, 0.86) 100%
     );
 }
 
 
 /* =========================================================
-   GOTHIC VIGNETTE
+   VIGNETTE
    ========================================================= */
 
 #app-mount::before {
@@ -359,15 +351,15 @@ body::after {
   background:
     radial-gradient(
       ellipse at center,
-      transparent 18%,
-      rgba(0, 0, 0, 0.34) 55%,
-      rgba(0, 0, 0, 0.90) 100%
+      transparent 16%,
+      rgba(0, 0, 0, 0.40) 58%,
+      rgba(0, 0, 0, 0.94) 100%
     );
 }
 
 
 /* =========================================================
-   NO EXTRA GLOW
+   REMOVE GLOW
    ========================================================= */
 
 #app-mount::after {
@@ -376,25 +368,50 @@ body::after {
 
 
 /* =========================================================
-   CLEARVISION BACKGROUND
-   ========================================================= */
-
-#app-mount .bg__960e4 {
-  background: transparent !important;
-}
-
-
-/* =========================================================
-   SERVER SIDEBAR
+   SERVER BAR
    ========================================================= */
 
 [class*="guilds_"] {
 
   background:
-    rgba(0, 0, 0, 0.86) !important;
+    rgba(0, 0, 0, 0.90) !important;
 
   border-right:
-    1px solid var(--gothic-red-soft) !important;
+    1px solid #553434 !important;
+}
+
+
+/* =========================================================
+   DISCORD HOME BUTTON — ROUND
+   ========================================================= */
+
+[class*="homeIcon_"],
+[class*="homeIcon_"] svg {
+
+  border-radius:
+    50% !important;
+}
+
+
+[class*="tutorialContainer_"] [class*="wrapper_"] {
+
+  border-radius:
+    50% !important;
+
+  overflow:
+    hidden !important;
+}
+
+
+/* Force Discord icon itself to stay round */
+
+[class*="homeIcon_"] {
+
+  border-radius:
+    50% !important;
+
+  overflow:
+    hidden !important;
 }
 
 
@@ -405,10 +422,10 @@ body::after {
 [class*="sidebar_"] {
 
   background:
-    rgba(0, 0, 0, 0.76) !important;
+    rgba(0, 0, 0, 0.80) !important;
 
   border-right:
-    1px solid var(--gothic-red-soft) !important;
+    1px solid #553434 !important;
 }
 
 
@@ -419,13 +436,9 @@ body::after {
 [class*="chat_"] {
 
   background:
-    rgba(0, 0, 0, 0.42) !important;
+    rgba(0, 0, 0, 0.44) !important;
 }
 
-
-/* =========================================================
-   CHAT CONTENT
-   ========================================================= */
 
 [class*="chatContent_"] {
 
@@ -441,15 +454,17 @@ body::after {
 [class*="membersWrap_"] {
 
   background:
-    rgba(0, 0, 0, 0.76) !important;
+    rgba(0, 0, 0, 0.80) !important;
 
   border-left:
-    1px solid var(--gothic-red-soft) !important;
+    1px solid #553434 !important;
 }
 
 
 [class*="members_"] {
-  background: transparent !important;
+
+  background:
+    transparent !important;
 }
 
 
@@ -460,10 +475,10 @@ body::after {
 [class*="panels_"] {
 
   background:
-    rgba(0, 0, 0, 0.86) !important;
+    rgba(0, 0, 0, 0.90) !important;
 
   border-top:
-    1px solid var(--gothic-red-soft) !important;
+    1px solid #553434 !important;
 }
 
 
@@ -475,7 +490,7 @@ body::after {
 [class*="modeUnread_"]:hover {
 
   background:
-    rgba(150, 35, 35, 0.12) !important;
+    #4b2929 !important;
 
   box-shadow:
     none !important;
@@ -483,13 +498,13 @@ body::after {
 
 
 /* =========================================================
-   SELECTED CHANNEL — FULLY OPAQUE RED
+   SELECTED CHANNEL — OPAQUE WET RED
    ========================================================= */
 
 [class*="modeSelected_"] {
 
   background:
-    #8f2020 !important;
+    #713c3c !important;
 
   opacity:
     1 !important;
@@ -500,13 +515,13 @@ body::after {
 
 
 /* =========================================================
-   SELECTED CHANNEL INDICATOR — OPAQUE RED
+   SELECTED CHANNEL INDICATOR
    ========================================================= */
 
 [class*="modeSelected_"]::before {
 
   background:
-    #b52a2a !important;
+    #855050 !important;
 
   opacity:
     1 !important;
@@ -534,13 +549,13 @@ body::after {
 
 
 /* =========================================================
-   ALL SELECTED ELEMENTS — OPAQUE RED
+   ALL SELECTED ELEMENTS
    ========================================================= */
 
 [class*="selected_"] {
 
   background:
-    #8f2020 !important;
+    #713c3c !important;
 
   opacity:
     1 !important;
@@ -551,13 +566,13 @@ body::after {
 
 
 /* =========================================================
-   SELECTED ELEMENT HOVER
+   SELECTED HOVER
    ========================================================= */
 
 [class*="selected_"]:hover {
 
   background:
-    #a52525 !important;
+    #855050 !important;
 
   opacity:
     1 !important;
@@ -568,7 +583,7 @@ body::after {
 
 
 /* =========================================================
-   SELECTED ELEMENT TEXT
+   SELECTED TEXT
    ========================================================= */
 
 [class*="selected_"] * {
@@ -610,14 +625,14 @@ body,
 
 
 /* =========================================================
-   SECONDARY TEXT
+   MUTED TEXT
    ========================================================= */
 
 [class*="description_"],
 [class*="muted_"] {
 
   color:
-    #a8a8a8 !important;
+    #a4a4a4 !important;
 
   text-shadow:
     none !important;
@@ -631,21 +646,21 @@ body,
 [class*="message_"]:hover {
 
   background:
-    rgba(150, 35, 35, 0.07) !important;
+    rgba(113, 60, 60, 0.12) !important;
 }
 
 
 /* =========================================================
-   MESSAGE INPUT
+   MESSAGE BOX
    ========================================================= */
 
 [class*="channelTextArea_"] {
 
   background:
-    rgba(0, 0, 0, 0.68) !important;
+    rgba(0, 0, 0, 0.72) !important;
 
   border:
-    1px solid var(--gothic-red) !important;
+    1px solid #713c3c !important;
 
   border-radius:
     8px;
@@ -658,7 +673,7 @@ body,
 [class*="channelTextArea_"]:focus-within {
 
   border-color:
-    var(--gothic-red-hover) !important;
+    #855050 !important;
 
   box-shadow:
     none !important;
@@ -672,10 +687,10 @@ body,
 [class*="searchBar_"] {
 
   background:
-    rgba(0, 0, 0, 0.68) !important;
+    rgba(0, 0, 0, 0.72) !important;
 
   border:
-    1px solid var(--gothic-red) !important;
+    1px solid #713c3c !important;
 
   box-shadow:
     none !important;
@@ -685,7 +700,7 @@ body,
 [class*="searchBar_"]:focus-within {
 
   border-color:
-    var(--gothic-red-hover) !important;
+    #855050 !important;
 
   box-shadow:
     none !important;
@@ -693,17 +708,17 @@ body,
 
 
 /* =========================================================
-   POPUPS / MENUS
+   POPUPS
    ========================================================= */
 
 [class*="menu_"],
 [class*="popout_"] {
 
   background:
-    rgba(5, 5, 5, 0.97) !important;
+    rgba(5, 5, 5, 0.98) !important;
 
   border:
-    1px solid var(--gothic-red) !important;
+    1px solid #713c3c !important;
 
   box-shadow:
     none !important;
@@ -720,10 +735,10 @@ body,
 [class*="modal_"] {
 
   background:
-    rgba(5, 5, 5, 0.97) !important;
+    rgba(5, 5, 5, 0.98) !important;
 
   border:
-    1px solid var(--gothic-red) !important;
+    1px solid #713c3c !important;
 
   box-shadow:
     none !important;
@@ -734,7 +749,7 @@ body,
 
 
 /* =========================================================
-   BUTTONS — NO GLOW
+   BUTTONS
    ========================================================= */
 
 button,
@@ -766,14 +781,14 @@ button:focus {
 ::-webkit-scrollbar-track {
 
   background:
-    rgba(0, 0, 0, 0.40);
+    rgba(0, 0, 0, 0.50);
 }
 
 
 ::-webkit-scrollbar-thumb {
 
   background:
-    rgba(150, 35, 35, 0.65);
+    #604040;
 
   border-radius:
     10px;
@@ -786,7 +801,7 @@ button:focus {
 ::-webkit-scrollbar-thumb:hover {
 
   background:
-    rgba(175, 45, 45, 0.78);
+    #805050;
 
   box-shadow:
     none !important;
@@ -803,7 +818,7 @@ button:focus {
     #050505 !important;
 
   border:
-    1px solid var(--gothic-red-soft) !important;
+    1px solid #553434 !important;
 
   box-shadow:
     none !important;
@@ -820,7 +835,7 @@ button:focus {
 [class*="divider_"] {
 
   border-color:
-    var(--gothic-red-soft) !important;
+    #553434 !important;
 }
 
 
@@ -831,7 +846,7 @@ button:focus {
 *:focus-visible {
 
   outline:
-    1px solid var(--gothic-red) !important;
+    1px solid #855050 !important;
 
   outline-offset:
     2px;
@@ -842,7 +857,7 @@ button:focus {
 
 
 /* =========================================================
-   GLOBAL NO-GLOW
+   ABSOLUTELY NO GLOW
    ========================================================= */
 
 * {
