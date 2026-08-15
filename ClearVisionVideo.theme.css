@@ -1,14 +1,14 @@
 /**
- * @name ClearVision V7 - Gothic Monochrome
+ * @name ClearVision V7 - Gothic Monochrome Red
  * @author ClearVision Team + q-randomfemboy-p
- * @version 7.0.1
- * @description High-contrast gothic black-and-white ClearVision theme.
+ * @version 7.0.2
+ * @description High-contrast gothic black-and-white ClearVision theme with faded red outlines.
  * @source https://github.com/ClearVision/ClearVision-v7
  * @website https://clearvision.github.io
  */
 
 /* =========================================================
-   CLEARVISION
+   CLEARVISION IMPORTS
    ========================================================= */
 
 @import url("https://clearvision.github.io/ClearVision-v7/main.css");
@@ -22,29 +22,24 @@
 :root {
 
   /* -------------------------------------------------------
-     ACCENT COLORS
+     RED ACCENT
      ------------------------------------------------------- */
 
-  --main-color: #ffffff;
-  --hover-color: #dcdcdc;
+  --main-color: #963232;
+  --hover-color: #b04747;
 
-  --success-color: #ffffff;
-  --danger-color: #888888;
+  --success-color: #b5b5b5;
+  --danger-color: #963232;
 
-
-  /* -------------------------------------------------------
-     STATUS COLORS
-     ------------------------------------------------------- */
-
-  --online-color: #ffffff;
-  --idle-color: #bcbcbc;
-  --dnd-color: #888888;
-  --streaming-color: #cfcfcf;
+  --online-color: #d0d0d0;
+  --idle-color: #a0a0a0;
+  --dnd-color: #963232;
+  --streaming-color: #b0b0b0;
   --offline-color: #555555;
 
 
   /* -------------------------------------------------------
-     BACKGROUND IMAGE
+     BACKGROUND
      ------------------------------------------------------- */
 
   --background-image: url(
@@ -55,30 +50,17 @@
   --background-size: cover;
   --background-attachment: fixed;
 
-
-  /* -------------------------------------------------------
-     BACKGROUND EFFECTS
-     ------------------------------------------------------- */
-
   --background-blur: 1px;
-
   --background-brightness: 0.52;
-
   --background-contrast: 1.35;
-
   --background-saturation: 0;
 
 
   /* -------------------------------------------------------
-     DARKNESS
+     SHADING
      ------------------------------------------------------- */
 
   --background-shading-percent: 65%;
-
-
-  /* -------------------------------------------------------
-     UI SHADING
-     ------------------------------------------------------- */
 
   --card-shading:
     rgba(0, 0, 0, 0.72);
@@ -97,11 +79,22 @@
      TEXT
      ------------------------------------------------------- */
 
-  --normal-text:
-    #ffffff;
+  --normal-text: #ffffff;
+  --muted-text: #a8a8a8;
 
-  --muted-text:
-    #a8a8a8;
+
+  /* -------------------------------------------------------
+     RED OUTLINES
+     ------------------------------------------------------- */
+
+  --gothic-red:
+    rgba(150, 35, 35, 0.72);
+
+  --gothic-red-soft:
+    rgba(150, 35, 35, 0.42);
+
+  --gothic-red-hover:
+    rgba(175, 45, 45, 0.82);
 
 
   /* -------------------------------------------------------
@@ -152,7 +145,7 @@
     #ffffff;
 
   --channel-selected-bg:
-    rgba(255, 255, 255, 0.10);
+    rgba(150, 35, 35, 0.22);
 
   --channel-unread:
     #ffffff;
@@ -166,7 +159,7 @@
      ------------------------------------------------------- */
 
   --focus-color:
-    #ffffff;
+    rgba(150, 35, 35, 0.85);
 }
 
 
@@ -347,7 +340,7 @@ body::before {
 
 
 /* =========================================================
-   DARK OVERLAY
+   DARK CINEMATIC OVERLAY
    ========================================================= */
 
 body::after {
@@ -402,7 +395,7 @@ body::after {
 
 
 /* =========================================================
-   DISABLE EXTRA GLOW LAYER
+   NO EXTRA GLOW
    ========================================================= */
 
 #app-mount::after {
@@ -428,6 +421,9 @@ body::after {
 
   background:
     rgba(0, 0, 0, 0.86) !important;
+
+  border-right:
+    1px solid var(--gothic-red-soft) !important;
 }
 
 
@@ -439,6 +435,9 @@ body::after {
 
   background:
     rgba(0, 0, 0, 0.76) !important;
+
+  border-right:
+    1px solid var(--gothic-red-soft) !important;
 }
 
 
@@ -452,6 +451,10 @@ body::after {
     rgba(0, 0, 0, 0.42) !important;
 }
 
+
+/* =========================================================
+   CHAT CONTENT
+   ========================================================= */
 
 [class*="chatContent_"] {
 
@@ -468,6 +471,9 @@ body::after {
 
   background:
     rgba(0, 0, 0, 0.76) !important;
+
+  border-left:
+    1px solid var(--gothic-red-soft) !important;
 }
 
 
@@ -486,6 +492,9 @@ body::after {
 
   background:
     rgba(0, 0, 0, 0.86) !important;
+
+  border-top:
+    1px solid var(--gothic-red-soft) !important;
 }
 
 
@@ -497,7 +506,7 @@ body::after {
 [class*="modeUnread_"]:hover {
 
   background:
-    rgba(255, 255, 255, 0.055) !important;
+    rgba(150, 35, 35, 0.12) !important;
 }
 
 
@@ -508,7 +517,7 @@ body::after {
 [class*="modeSelected_"] {
 
   background:
-    rgba(255, 255, 255, 0.11) !important;
+    rgba(150, 35, 35, 0.20) !important;
 
   box-shadow:
     none !important;
@@ -516,13 +525,13 @@ body::after {
 
 
 /* =========================================================
-   SELECTED CHANNEL INDICATOR
+   SELECTED CHANNEL RED BAR
    ========================================================= */
 
 [class*="modeSelected_"]::before {
 
   background:
-    #ffffff !important;
+    rgba(155, 40, 40, 0.82) !important;
 
   box-shadow:
     none !important;
@@ -557,8 +566,6 @@ body,
 }
 
 
-/* Secondary text */
-
 [class*="description_"],
 [class*="muted_"] {
 
@@ -577,7 +584,7 @@ body,
 [class*="message_"]:hover {
 
   background:
-    rgba(255, 255, 255, 0.025) !important;
+    rgba(150, 35, 35, 0.07) !important;
 }
 
 
@@ -588,13 +595,23 @@ body,
 [class*="channelTextArea_"] {
 
   background:
-    rgba(0, 0, 0, 0.62) !important;
+    rgba(0, 0, 0, 0.68) !important;
 
   border:
-    1px solid rgba(255, 255, 255, 0.08);
+    1px solid var(--gothic-red) !important;
 
   border-radius:
     8px;
+
+  box-shadow:
+    none !important;
+}
+
+
+[class*="channelTextArea_"]:focus-within {
+
+  border-color:
+    var(--gothic-red-hover) !important;
 
   box-shadow:
     none !important;
@@ -608,10 +625,20 @@ body,
 [class*="searchBar_"] {
 
   background:
-    rgba(0, 0, 0, 0.62) !important;
+    rgba(0, 0, 0, 0.68) !important;
 
   border:
-    1px solid rgba(255, 255, 255, 0.08);
+    1px solid var(--gothic-red) !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+[class*="searchBar_"]:focus-within {
+
+  border-color:
+    var(--gothic-red-hover) !important;
 
   box-shadow:
     none !important;
@@ -629,7 +656,7 @@ body,
     rgba(5, 5, 5, 0.97) !important;
 
   border:
-    1px solid rgba(255, 255, 255, 0.09);
+    1px solid var(--gothic-red) !important;
 
   box-shadow:
     none !important;
@@ -649,7 +676,7 @@ body,
     rgba(5, 5, 5, 0.97) !important;
 
   border:
-    1px solid rgba(255, 255, 255, 0.09);
+    1px solid var(--gothic-red) !important;
 
   box-shadow:
     none !important;
@@ -710,7 +737,7 @@ button:focus {
 ::-webkit-scrollbar-thumb {
 
   background:
-    #555555;
+    rgba(150, 35, 35, 0.65);
 
   border-radius:
     10px;
@@ -723,7 +750,7 @@ button:focus {
 ::-webkit-scrollbar-thumb:hover {
 
   background:
-    #888888;
+    rgba(175, 45, 45, 0.78);
 
   box-shadow:
     none !important;
@@ -740,7 +767,7 @@ button:focus {
     #050505 !important;
 
   border:
-    1px solid rgba(255, 255, 255, 0.09);
+    1px solid var(--gothic-red-soft) !important;
 
   box-shadow:
     none !important;
@@ -757,7 +784,7 @@ button:focus {
 [class*="divider_"] {
 
   border-color:
-    rgba(255, 255, 255, 0.09) !important;
+    var(--gothic-red-soft) !important;
 }
 
 
@@ -768,7 +795,7 @@ button:focus {
 *:focus-visible {
 
   outline:
-    1px solid #ffffff !important;
+    1px solid var(--gothic-red) !important;
 
   outline-offset:
     2px;
