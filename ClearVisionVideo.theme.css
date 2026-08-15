@@ -650,19 +650,9 @@ body::after {
     none !important;
 }
 
-[class*="nameplated_"] *,
-[class*="nameplate_"] * {
-
-  color:
-    #111111 !important;
-
-  text-shadow:
-    none !important;
-}
-
 
 /* =========================================================
-   REMOVE NAME / USERNAME / TAG BUBBLES
+   NAME / USERNAME / TAG BUBBLES REMOVED
    ========================================================= */
 
 [class*="nameTag_"],
@@ -694,14 +684,19 @@ body::after {
 
 
 /* =========================================================
-   NAMEPLATE / TAG CONTAINERS
+   SERVER TAGS / USER TAGS
    ========================================================= */
 
-[class*="nameplated_"],
-[class*="nameplate_"],
 [class*="tag_"],
 [class*="tags_"],
-[class*="chip_"] {
+[class*="userTag_"],
+[class*="guildTag_"],
+[class*="clanTag_"],
+[class*="serverTag_"],
+[data-list-item-id*="tag"] {
+
+  background:
+    transparent !important;
 
   border:
     none !important;
@@ -755,6 +750,109 @@ body::after {
 
 
 /* =========================================================
+   ATTACHMENTS / IMAGES / GIFS
+   NO BORDERS OR BUBBLES
+   ========================================================= */
+
+[class*="attachment_"],
+[class*="attachments_"],
+[class*="imageWrapper_"],
+[class*="imageContainer_"],
+[class*="embed_"],
+[class*="embedWrapper_"],
+[class*="embedFull_"],
+[class*="embedMedia_"],
+[class*="mediaWrapper_"],
+[class*="mediaContainer_"],
+[class*="gif_"],
+[class*="gifv_"],
+[class*="video_"],
+[class*="videoContainer_"],
+[class*="spoilerContainer_"],
+[class*="fileWrapper_"] {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   IMAGE / GIF / VIDEO CONTENT
+   ========================================================= */
+
+[class*="imageWrapper_"] img,
+[class*="mediaWrapper_"] img,
+[class*="gif_"] img,
+[class*="gifv_"] img,
+[class*="video_"] video {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+
+  border-radius:
+    6px !important;
+}
+
+
+/* =========================================================
+   EMBEDS
+   ========================================================= */
+
+[class*="embed_"],
+[class*="embedWrapper_"],
+[class*="embedFull_"] {
+
+  border-left:
+    none !important;
+
+  border-right:
+    none !important;
+
+  border-top:
+    none !important;
+
+  border-bottom:
+    none !important;
+
+  border-radius:
+    6px !important;
+
+  background:
+    rgba(0, 0, 0, 0.26) !important;
+}
+
+
+/* =========================================================
+   IMAGE / GIF HOVER
+   ========================================================= */
+
+[class*="imageWrapper_"]:hover,
+[class*="mediaWrapper_"]:hover {
+
+  border:
+    none !important;
+
+  outline:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
    MESSAGE INPUT
    ========================================================= */
 
@@ -785,7 +883,6 @@ body::after {
 
 /* =========================================================
    FIND OR START A CONVERSATION
-   REMOVE BOX
    ========================================================= */
 
 [class*="searchBar_"] {
@@ -901,7 +998,7 @@ body::after {
 
 /* =========================================================
    ACTUAL CLICKABLE UTILITY BUTTONS
-   VERY FAINT WHITE ROUNDED OUTLINE
+   FAINT WHITE OUTLINE
    ========================================================= */
 
 [class*="iconButton_"],
@@ -950,7 +1047,7 @@ button,
 
 
 /* =========================================================
-   REMOVE OUTLINE FROM NAME / TAG ELEMENTS AGAIN
+   KEEP NAME / TAG / BADGE ELEMENTS FLAT
    ========================================================= */
 
 [class*="nameTag_"],
@@ -958,13 +1055,15 @@ button,
 [class*="displayName_"],
 [class*="globalName_"],
 [class*="userTag_"],
+[class*="guildTag_"],
+[class*="clanTag_"],
+[class*="serverTag_"],
 [class*="role_"],
 [class*="roles_"],
 [class*="badge_"],
 [class*="profileBadge_"],
 [class*="tag_"],
-[class*="tags_"],
-[class*="chip_"] {
+[class*="tags_"] {
 
   border:
     none !important;
@@ -974,6 +1073,9 @@ button,
 
   box-shadow:
     none !important;
+
+  border-radius:
+    0 !important;
 }
 
 
