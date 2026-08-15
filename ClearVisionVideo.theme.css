@@ -1,8 +1,8 @@
 /**
  * @name ClearVision V7 - Gothic Monochrome Red
  * @author ClearVision Team + q-randomfemboy-p
- * @version 7.0.2
- * @description High-contrast gothic black-and-white ClearVision theme with faded red outlines.
+ * @version 7.0.3
+ * @description High-contrast gothic black-and-white ClearVision theme with opaque red selections.
  * @source https://github.com/ClearVision/ClearVision-v7
  * @website https://clearvision.github.io
  */
@@ -21,26 +21,22 @@
 
 :root {
 
-  /* -------------------------------------------------------
-     RED ACCENT
-     ------------------------------------------------------- */
+  /* RED ACCENT */
 
-  --main-color: #963232;
-  --hover-color: #b04747;
+  --main-color: #8f2020;
+  --hover-color: #a52525;
 
   --success-color: #b5b5b5;
-  --danger-color: #963232;
+  --danger-color: #8f2020;
 
   --online-color: #d0d0d0;
   --idle-color: #a0a0a0;
-  --dnd-color: #963232;
+  --dnd-color: #8f2020;
   --streaming-color: #b0b0b0;
   --offline-color: #555555;
 
 
-  /* -------------------------------------------------------
-     BACKGROUND
-     ------------------------------------------------------- */
+  /* BACKGROUND */
 
   --background-image: url(
     "https://raw.githubusercontent.com/q-randomfemboy-p/Image-cycler-Discord-TP/main/b9a789aa5a073e660b58cf2a74bbf10e.jpg"
@@ -56,61 +52,44 @@
   --background-saturation: 0;
 
 
-  /* -------------------------------------------------------
-     SHADING
-     ------------------------------------------------------- */
+  /* SHADING */
 
   --background-shading-percent: 65%;
 
-  --card-shading:
-    rgba(0, 0, 0, 0.72);
-
-  --popout-shading:
-    rgba(0, 0, 0, 0.94);
-
-  --modal-shading:
-    rgba(0, 0, 0, 0.96);
-
-  --input-shading:
-    rgba(255, 255, 255, 0.06);
+  --card-shading: rgba(0, 0, 0, 0.72);
+  --popout-shading: rgba(0, 0, 0, 0.94);
+  --modal-shading: rgba(0, 0, 0, 0.96);
+  --input-shading: rgba(255, 255, 255, 0.06);
 
 
-  /* -------------------------------------------------------
-     TEXT
-     ------------------------------------------------------- */
+  /* TEXT */
 
   --normal-text: #ffffff;
   --muted-text: #a8a8a8;
 
 
-  /* -------------------------------------------------------
-     RED OUTLINES
-     ------------------------------------------------------- */
+  /* RED OUTLINES */
 
-  --gothic-red:
-    rgba(150, 35, 35, 0.72);
-
-  --gothic-red-soft:
-    rgba(150, 35, 35, 0.42);
-
-  --gothic-red-hover:
-    rgba(175, 45, 45, 0.82);
+  --gothic-red: rgba(150, 35, 35, 0.72);
+  --gothic-red-soft: rgba(150, 35, 35, 0.42);
+  --gothic-red-hover: rgba(175, 45, 45, 0.82);
 
 
-  /* -------------------------------------------------------
-     HOME ICON
-     ------------------------------------------------------- */
+  /* OPAQUE SELECTED RED */
+
+  --selected-red: #8f2020;
+  --selected-red-light: #b52a2a;
+
+
+  /* HOME */
 
   --home-icon:
     url("https://clearvision.github.io/icons/discord.svg");
 
-  --home-size:
-    cover;
+  --home-size: cover;
 
 
-  /* -------------------------------------------------------
-     FONTS
-     ------------------------------------------------------- */
+  /* FONTS */
 
   --main-font:
     "gg sans",
@@ -128,9 +107,7 @@
     monospace;
 
 
-  /* -------------------------------------------------------
-     CHANNEL COLORS
-     ------------------------------------------------------- */
+  /* CHANNEL COLORS */
 
   --channel-normal:
     var(--interactive-text-default);
@@ -145,21 +122,19 @@
     #ffffff;
 
   --channel-selected-bg:
-    rgba(150, 35, 35, 0.22);
+    var(--selected-red);
 
   --channel-unread:
     #ffffff;
 
   --channel-unread-hover:
-    #dcdcdc;
+    #ffffff;
 
 
-  /* -------------------------------------------------------
-     ACCESSIBILITY
-     ------------------------------------------------------- */
+  /* ACCESSIBILITY */
 
   --focus-color:
-    rgba(150, 35, 35, 0.85);
+    var(--selected-red-light);
 }
 
 
@@ -280,14 +255,13 @@
 
 
 /* =========================================================
-   BASE TRANSPARENCY
+   TRANSPARENT BASE
    ========================================================= */
 
 html,
 body,
 #app-mount {
-  background:
-    transparent !important;
+  background: transparent !important;
 }
 
 
@@ -340,7 +314,7 @@ body::before {
 
 
 /* =========================================================
-   DARK CINEMATIC OVERLAY
+   DARK OVERLAY
    ========================================================= */
 
 body::after {
@@ -356,7 +330,6 @@ body::after {
   z-index: -99;
 
   background:
-
     linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.86) 0%,
@@ -384,7 +357,6 @@ body::after {
   z-index: -98;
 
   background:
-
     radial-gradient(
       ellipse at center,
       transparent 18%,
@@ -408,8 +380,7 @@ body::after {
    ========================================================= */
 
 #app-mount .bg__960e4 {
-  background:
-    transparent !important;
+  background: transparent !important;
 }
 
 
@@ -478,9 +449,7 @@ body::after {
 
 
 [class*="members_"] {
-
-  background:
-    transparent !important;
+  background: transparent !important;
 }
 
 
@@ -507,17 +476,6 @@ body::after {
 
   background:
     rgba(150, 35, 35, 0.12) !important;
-}
-
-
-/* =========================================================
-   SELECTED CHANNEL
-   ========================================================= */
-
-[class*="modeSelected_"] {
-
-  background:
-    rgba(150, 35, 35, 0.20) !important;
 
   box-shadow:
     none !important;
@@ -525,15 +483,100 @@ body::after {
 
 
 /* =========================================================
-   SELECTED CHANNEL RED BAR
+   SELECTED CHANNEL — FULLY OPAQUE RED
+   ========================================================= */
+
+[class*="modeSelected_"] {
+
+  background:
+    #8f2020 !important;
+
+  opacity:
+    1 !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   SELECTED CHANNEL INDICATOR — OPAQUE RED
    ========================================================= */
 
 [class*="modeSelected_"]::before {
 
   background:
-    rgba(155, 40, 40, 0.82) !important;
+    #b52a2a !important;
+
+  opacity:
+    1 !important;
 
   box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   SELECTED CHANNEL TEXT
+   ========================================================= */
+
+[class*="modeSelected_"] [class*="name_"] {
+
+  color:
+    #ffffff !important;
+
+  opacity:
+    1 !important;
+
+  text-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   ALL SELECTED ELEMENTS — OPAQUE RED
+   ========================================================= */
+
+[class*="selected_"] {
+
+  background:
+    #8f2020 !important;
+
+  opacity:
+    1 !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   SELECTED ELEMENT HOVER
+   ========================================================= */
+
+[class*="selected_"]:hover {
+
+  background:
+    #a52525 !important;
+
+  opacity:
+    1 !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* =========================================================
+   SELECTED ELEMENT TEXT
+   ========================================================= */
+
+[class*="selected_"] * {
+
+  color:
+    #ffffff !important;
+
+  text-shadow:
     none !important;
 }
 
@@ -565,6 +608,10 @@ body,
     none !important;
 }
 
+
+/* =========================================================
+   SECONDARY TEXT
+   ========================================================= */
 
 [class*="description_"],
 [class*="muted_"] {
@@ -687,7 +734,7 @@ body,
 
 
 /* =========================================================
-   BUTTONS
+   BUTTONS — NO GLOW
    ========================================================= */
 
 button,
@@ -698,17 +745,6 @@ button:focus {
     none !important;
 
   text-shadow:
-    none !important;
-}
-
-
-/* =========================================================
-   SELECTED ELEMENTS
-   ========================================================= */
-
-[class*="selected_"] {
-
-  box-shadow:
     none !important;
 }
 
@@ -806,7 +842,7 @@ button:focus {
 
 
 /* =========================================================
-   GLOBAL NO-GLOW OVERRIDE
+   GLOBAL NO-GLOW
    ========================================================= */
 
 * {
